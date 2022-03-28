@@ -14,7 +14,7 @@
 #include "catDatabase.h"
 
 //stored number of cats in database as global variables
-int numberOfCats;
+NumCats numberOfCats;
 
 //allocate memory to struct
 struct cat_database catabase[MAX_CATS];

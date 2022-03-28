@@ -11,6 +11,7 @@
 #pragma once
 
 typedef double Weight;
+typedef int NumCats;
 
 #define ERROR (1)
 #define NOERROR (0)

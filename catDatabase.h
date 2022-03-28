@@ -49,7 +49,7 @@ struct cat_database{
 extern struct cat_database catabase[MAX_CATS];
 
 //Note: Current number of cats in database held as a global variable
-extern int numberOfCats;
+extern NumCats numberOfCats;
 
 /* Zeroes out the database based on MAX_CATS
  *
