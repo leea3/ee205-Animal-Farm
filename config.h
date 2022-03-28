@@ -10,6 +10,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 #pragma once
 
+typedef double Weight;
+
 #define ERROR (1)
 #define NOERROR (0)
 #define BAD_CAT (-1)

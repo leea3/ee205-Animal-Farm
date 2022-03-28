@@ -41,7 +41,7 @@ int fixCat( const int index ) {
 }
 
 int updateCatWeight( const int    index
-        ,const double newCatWeight ) {
+        ,const Weight newCatWeight ) {
 
     if( isValidWeight( newCatWeight ) == ERROR ) return ERROR;
     else if( isIndexValid( index ) == ERROR ) return ERROR;

@@ -12,6 +12,7 @@
 #pragma once
 #include <stdbool.h>
 #include "catDatabase.h"
+#include "config.h"
 
 /** Function that adds cats to database
  *
@@ -25,7 +26,7 @@ extern int addCat( const char               addName[]
         ,const enum               Gender addGender
         ,const enum               Breed addBreed
         ,const bool               addFixed
-        ,const double             addWeight
+        ,const Weight             addWeight
         ,const enum               Color addCollar1
         ,const enum               Color addCollar2
         ,const unsigned long long addLicense );
@@ -54,4 +55,4 @@ extern int isValidName( const char checkName[] );
  *
  * @param weight of the cat
  */
-extern int isValidWeight( const double checkWeight );
+extern int isValidWeight( const Weight checkWeight );

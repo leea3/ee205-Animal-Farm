@@ -11,6 +11,7 @@
 
 #pragma once
 #include <stdbool.h>
+#include "config.h"
 
 #define MAX_CATS (1024)
 #define CATNAME_CHARLIMIT (50)
@@ -38,7 +39,7 @@ struct cat_database{
     enum Gender gender;
     enum Breed breed;
     bool fixed;
-    double weight;
+    Weight weight;
     enum Color collarColor1;
     enum Color collarColor2;
     unsigned long long license;

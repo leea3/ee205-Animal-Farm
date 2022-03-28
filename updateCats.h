@@ -39,7 +39,7 @@ extern int fixCat( const int index );
  * @param index of the cat
  * @param new weight
  */
-extern int updateCatWeight( const int index , const double newCatWeight );
+extern int updateCatWeight( const int index , const Weight newCatWeight );
 
 /* Checks if the entered index is valid
  *
