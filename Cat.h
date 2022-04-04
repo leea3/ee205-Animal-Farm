@@ -48,5 +48,22 @@ protected: //Protected member variables
 public: //public member variables
     Cat* next;
 
-};
+public: //public constructors
+    Cat();
 
+    Cat(const char*  newName,
+        const Gender newGender,
+        const Breed  newBreed,
+        const Weight newWeight);
+
+public: //getters and setters
+    void setName  (const char*  name);
+
+    void setGender(const Gender gender);
+
+    void setBreed (const Breed  breed);
+
+    void setWeight(const Weight weight);
+
+
+};
