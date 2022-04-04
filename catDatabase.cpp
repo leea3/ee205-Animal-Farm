@@ -13,6 +13,8 @@
 #include <string.h>
 #include "catDatabase.h"
 
+/*
+
 //stored number of cats in database as global variables
 NumCats numberOfCats;
 
@@ -35,4 +37,4 @@ void initializeDatabase( ) {
     }
 }
 
-
+*/

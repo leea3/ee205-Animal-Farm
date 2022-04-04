@@ -14,6 +14,8 @@
 #include "updateCats.h"
 #include "deleteCats.h"
 
+/*
+
 void deleteAllCats( ) {
 
     numberOfCats = 0;  //changes global variable found in catDatabase.h to 0
@@ -39,3 +41,4 @@ void deleteCat( const int index ) {
     else fprintf( stderr, "%s: Error, cannor delete cat at index [%d]\n", __FILE__, index);
 }
 
+*/

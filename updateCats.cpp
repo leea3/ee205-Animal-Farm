@@ -15,6 +15,7 @@
 #include "updateCats.h"
 #include "addCats.h"
 #include "config.h"
+/*
 
 int updateCatName( const int  index
         ,const char newCatName[] ) {
@@ -88,3 +89,4 @@ int isIndexValid( const int index ) {
     }
     else return NOERROR;
 }
+*/

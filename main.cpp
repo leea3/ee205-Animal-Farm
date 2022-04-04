@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <assert.h>
+#include <iostream>
 #include "addCats.h"
 #include "catDatabase.h"
 #include "reportCats.h"
@@ -19,8 +20,12 @@
 #include "deleteCats.h"
 #include "config.h"
 
+using namespace std;
+
 int main() {
-    printf( "Starting %s\n", "Animal Farm 1" ) ;
+    cout << "Starting " << PROGRAM_NAME << endl ;
+
+    /*
     initializeDatabase() ;
     addCat( "Loki", MALE, PERSIAN, true, 8.5, BLACK, WHITE, 101 ) ;
     addCat( "Milo", MALE, MANX, true, 7.0, BLACK, RED, 102 ) ;
@@ -77,7 +82,8 @@ int main() {
     printAllCats() ;
     deleteAllCats() ;
     printAllCats() ;
-    printf( "Done with %s\n", "Animal Farm 1" ) ;
+     */
+    cout << "Done with " << PROGRAM_NAME << endl ;
     return( 0 ) ;
 }
 

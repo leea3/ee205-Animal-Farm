@@ -16,6 +16,8 @@
 #include "addCats.h"
 #include "config.h"
 
+/*
+
 int addCat(  const char                addName[]
         ,const enum                Gender addGender
         ,const enum                Breed addBreed
@@ -100,3 +102,4 @@ int isValidWeight( const Weight checkWeight ) {
     return NOERROR;
 }
 
+*/

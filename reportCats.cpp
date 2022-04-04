@@ -14,6 +14,8 @@
 #include <string.h>
 #include "reportCats.h"
 
+/*
+
 void printCat( const int index ) {
     if( (index < 0) | (index >= numberOfCats) ){
         fprintf( stderr, "%s: Error, Bad Cat [%d]\n", __FILE__, index);
@@ -80,3 +82,4 @@ const char* colorToString ( const enum Color convertColor ) {
     }
     return 0;
 }
+*/
