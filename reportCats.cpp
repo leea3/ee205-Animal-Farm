@@ -12,7 +12,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <iostream>
 #include "reportCats.h"
+
+using namespace std;
 
 /*
 
@@ -44,13 +47,14 @@ int findCat( const char findName[] ){
     fprintf( stderr, "%s: Error, cannot find \"%s\" in database, exiting program...\n" , __FILE__, findName);
     exit( EXIT_FAILURE );
 }
+ */
 
 const char* genderToString ( const enum Gender convertGender ) {
     switch( convertGender ){
         case UNKNOWN_GENDER: return "UNKNOWN GENDER";
         case MALE:           return "MALE";
         case FEMALE:         return "FEMALE";
-        default:             fprintf(stderr, "%s: Error, Invalid Gender", __FILE__);
+        default:             cout << __FILE__ << ": Error, invalid gender" << endl ;
             break;
     }
     return 0;
@@ -64,11 +68,13 @@ const char* breedToString ( const enum Breed convertBreed ) {
         case SHORTHAIR:     return "SHORTHAIR";
         case PERSIAN:       return "PERSIAN";
         case SPHYNX:        return "SPHYNX";
-        default:            fprintf(stderr, "%s: Error, Invalid Breed", __FILE__);
+        default:            cout << __FILE__ << ": Error, invalid breed" << endl ;
             break;
     }
     return 0;
 }
+
+ /*
 const char* colorToString ( const enum Color convertColor ) {
     switch( convertColor ){
         case BLACK: return "BLACK";
