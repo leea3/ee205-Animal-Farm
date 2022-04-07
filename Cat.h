@@ -69,5 +69,8 @@ public: //getters and setters
 
     void setWeight(const Weight weight);
 
+public: //public methods
+    bool printCat()    const noexcept; //prints a cat's name and its characteristics
+    bool validateCat() const noexcept; //series of validation checks on name, weight
 
 };

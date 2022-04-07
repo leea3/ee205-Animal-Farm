@@ -10,6 +10,13 @@
 ///////////////////////////////////////////////////////////////////////////////
 #include "Cat.h"
 #include <string.h>
+#include <iostream>
+#include <iomanip>
+#include <assert.h>
+
+#define FORMAT_LINE( className, member ) cout << setw(8) << (className) << setw(20) << (member) << setw(52)
+
+using namespace std;
 
 Cat::Cat() {
 
@@ -30,12 +37,32 @@ Cat::Cat(const char* newName,
     }
 
 Cat::~Cat(){
-    memset( name , '-' , 10 );
+    memset( name , 0 , 10 );
     gender     = UNKNOWN_GENDER;
     breed      = UNKNOWN_BREED;
     isCatFixed = false;
     weight     = 0.0;
 }
+
+//@todo Implement getters
+bool Cat::printCat() const noexcept {
+    assert( validateCat() ) ;
+    cout << setw(80) << setfill( '=' ) << "" << endl ;
+    cout << setfill( ' ' ) ;
+    cout << left ;
+    cout << boolalpha ;
+    FORMAT_LINE( "Cat", "name" ) << getName() << endl ;
+    FORMAT_LINE( "Cat", "gender" ) << genderName( getGender() ) << endl ;
+    FORMAT_LINE( "Cat", "breed" ) << breedName( getBreed() ) << endl ;
+    FORMAT_LINE( "Cat", "isFixed" ) << isCatFixed() << endl ;
+    FORMAT_LINE( "Cat", "weight" ) << getWeight() << endl ;
+    return true ;
+}
+
+bool validateCat() {
+
+}
+
 
     //@todo Add Validation
 void Cat::setName(const char* newName) {
