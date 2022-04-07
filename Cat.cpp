@@ -8,10 +8,12 @@
 /// @author Arthur Lee <leea3@hawaii.edu>
 /// @date   10_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
+#include <assert.h>
 #include <string.h>
 #include <iostream>
 #include <iomanip>
-#include <assert.h>
+#include <stdexcept>
+#include "config.h"
 #include "Cat.h"
 #include "reportCats.h"
 
@@ -60,11 +62,24 @@ bool Cat::printCat() const noexcept {
 }
 
 bool Cat::validateCat() const noexcept {
-
+    try {
+        validateName(name);
+    }
+    catch(const exception& e){
+        cout << e.what() << endl;
+    }
+    return NOERROR;
 }
 
-bool Cat::validateName( const char* newName ) const noexcept{
+bool Cat::validateName( const char* newName ) const {
+    if ( newName            == nullptr )
+        throw invalid_argument( PROGRAM_NAME ": New cat name cannot be null." );
+    if ( strlen( newName )  == 0 )
+        throw invalid_argument( PROGRAM_NAME ": New cat name cannot be empty.");
+    if ( strlen( newName )  >  CATNAME_CHARLIMIT )
+        throw invalid_argument( PROGRAM_NAME ": New cat name cannot exceed CATNAME_CHARLIMIT characters");
 
+    return NOERROR;
 }
 
 bool Cat::validateGender(const Gender newGender) const noexcept {

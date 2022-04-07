@@ -77,7 +77,7 @@ public: //public methods
     bool validateCat() const noexcept; //series of validation checks on name, weight
 
 public: //validation methods
-    bool validateName  ( const char* newName    )   const noexcept;
+    bool validateName  ( const char* newName    )   const;
     bool validateGender( const Gender newGender )   const noexcept;
     bool validateBreed ( const Breed newBreed   )   const noexcept;
     bool validateWeight( const Weight newWeight )   const noexcept;
