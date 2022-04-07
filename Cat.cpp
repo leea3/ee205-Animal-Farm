@@ -20,6 +20,7 @@ Cat::Cat(const char* newName,
          const Cat::Breed newBreed,
          const float newWeight) : Cat() {
 
+            //set default values to new cats
             setName( newName );
             setGender( newGender );
             setBreed( newBreed );
@@ -28,6 +29,15 @@ Cat::Cat(const char* newName,
 
     }
 
+Cat::~Cat(){
+    memset( name , '-' , 10 );
+    gender     = UNKNOWN_GENDER;
+    breed      = UNKNOWN_BREED;
+    isCatFixed = false;
+    weight     = 0.0;
+}
+
+    //@todo Add Validation
 void Cat::setName(const char* newName) {
     strcpy(Cat::name, newName);
 }
@@ -39,7 +49,7 @@ void Cat::setGender(const Gender newGender) {
 void Cat::setBreed(const Breed newBreed) {
     Cat::breed = newBreed;
 }
-
+    //@todo Add Validation
 void Cat::setWeight(float newWeight) {
     Cat::weight = newWeight;
 }

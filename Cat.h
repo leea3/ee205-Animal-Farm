@@ -48,13 +48,17 @@ protected: //Protected member variables
 public: //public member variables
     Cat* next;
 
-public: //public constructors
+public: //public constructors & destructors
+
     Cat();
 
     Cat(const char*  newName,
         const Gender newGender,
         const Breed  newBreed,
         const Weight newWeight);
+
+    //destructor that sets default values to a cat
+    ~Cat();
 
 public: //getters and setters
     void setName  (const char*  name);
