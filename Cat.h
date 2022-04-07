@@ -76,4 +76,9 @@ public: //public methods
     bool printCat()    const noexcept; //prints a cat's name and its characteristics
     bool validateCat() const noexcept; //series of validation checks on name, weight
 
+public: //validation methods
+    bool validateName  ( const char* newName    )   const noexcept;
+    bool validateGender( const Gender newGender )   const noexcept;
+    bool validateBreed ( const Breed newBreed   )   const noexcept;
+    bool validateWeight( const Weight newWeight )   const noexcept;
 };

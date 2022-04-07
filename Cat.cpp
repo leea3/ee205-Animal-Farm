@@ -45,7 +45,6 @@ Cat::~Cat(){
     weight     = 0.0;
 }
 
-//@todo Implement getters
 bool Cat::printCat() const noexcept {
     assert( validateCat() ) ;
     cout << setw(80) << setfill( '=' ) << "" << endl ;
@@ -60,10 +59,25 @@ bool Cat::printCat() const noexcept {
     return true ;
 }
 
-bool validateCat() {
+bool Cat::validateCat() const noexcept {
 
 }
 
+bool Cat::validateName( const char* newName ) const noexcept{
+
+}
+
+bool Cat::validateGender(const Gender newGender) const noexcept {
+
+}
+
+bool Cat::validateBreed( const Breed newBreed ) const noexcept {
+
+}
+
+bool Cat::validateWeight( const Weight newWeight ) const noexcept {
+
+}
 
     //@todo Add Validation
 void Cat::setName(const char* newName) {
