@@ -42,7 +42,7 @@ protected: //Protected member variables
     enum   Gender gender ;
     enum   Breed  breed ;
     //enum Color  color;
-    bool          isCatFixed;
+    bool          isFixed;
     Weight        weight;
 
 public: //public member variables
@@ -61,13 +61,16 @@ public: //public constructors & destructors
     ~Cat();
 
 public: //getters and setters
-    void setName  (const char*  name);
+    void setName   ( const char*  name   );
+    void setGender ( const Gender gender );
+    void setBreed  ( const Breed  breed  );
+    void setWeight ( const Weight weight );
 
-    void setGender(const Gender gender);
-
-    void setBreed (const Breed  breed);
-
-    void setWeight(const Weight weight);
+    const  char* getName()    const;
+    Gender       getGender()  const;
+    Breed        getBreed()   const;
+    bool         getFixed()   const;
+    Weight       getWeight()  const;
 
 public: //public methods
     bool printCat()    const noexcept; //prints a cat's name and its characteristics

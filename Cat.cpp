@@ -8,11 +8,12 @@
 /// @author Arthur Lee <leea3@hawaii.edu>
 /// @date   10_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
-#include "Cat.h"
 #include <string.h>
 #include <iostream>
 #include <iomanip>
 #include <assert.h>
+#include "Cat.h"
+#include "reportCats.h"
 
 #define FORMAT_LINE( className, member ) cout << setw(8) << (className) << setw(20) << (member) << setw(52)
 
@@ -40,7 +41,7 @@ Cat::~Cat(){
     memset( name , 0 , 10 );
     gender     = UNKNOWN_GENDER;
     breed      = UNKNOWN_BREED;
-    isCatFixed = false;
+    isFixed    = false;
     weight     = 0.0;
 }
 
@@ -51,11 +52,11 @@ bool Cat::printCat() const noexcept {
     cout << setfill( ' ' ) ;
     cout << left ;
     cout << boolalpha ;
-    FORMAT_LINE( "Cat", "name" ) << getName() << endl ;
-    FORMAT_LINE( "Cat", "gender" ) << genderName( getGender() ) << endl ;
-    FORMAT_LINE( "Cat", "breed" ) << breedName( getBreed() ) << endl ;
-    FORMAT_LINE( "Cat", "isFixed" ) << isCatFixed() << endl ;
-    FORMAT_LINE( "Cat", "weight" ) << getWeight() << endl ;
+    FORMAT_LINE( "Cat", "name" )    << getName()                     << endl ;
+    FORMAT_LINE( "Cat", "gender" )  << genderToString( getGender() ) << endl ;
+    FORMAT_LINE( "Cat", "breed" )   << breedToString( getBreed() )   << endl ;
+    FORMAT_LINE( "Cat", "isFixed" ) << getFixed()                  << endl ;
+    FORMAT_LINE( "Cat", "weight" )  << getWeight()                   << endl ;
     return true ;
 }
 
@@ -79,4 +80,24 @@ void Cat::setBreed(const Breed newBreed) {
     //@todo Add Validation
 void Cat::setWeight(float newWeight) {
     Cat::weight = newWeight;
+}
+
+const char* Cat::getName() const {
+    return Cat::name;
+}
+
+Cat::Gender Cat::getGender() const {
+    return Cat::gender;
+}
+
+Cat::Breed Cat::getBreed() const {
+    return Cat::breed;
+}
+
+bool Cat::getFixed() const {
+    return Cat::isFixed;
+}
+
+Cat::Weight Cat::getWeight() const {
+    return Cat::weight;
 }

@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #pragma once
-#include "catDatabase.h"
+#include "Cat.h"
 
 /* Prints database contents at a specified index
  *
@@ -35,16 +35,16 @@ extern int findCat( const char findName[] );
  *
  * @param gender of the cat
  */
-extern const char* genderToString ( const enum Gender convertGender );
+extern const char* genderToString ( const enum Cat::Gender convertGender );
 
 /* maps breed enum to string
  *
  * @param breed of the cat
  */
-extern const char* breedToString ( const enum Breed convertBreed );
+extern const char* breedToString ( const enum Cat::Breed convertBreed );
 
 /* maps color enum to string
  *
  * @param color of the cat's collar
  */
-extern const char* colorToString ( const enum Color convertColor );
+//extern const char* colorToString ( const enum Color convertColor );

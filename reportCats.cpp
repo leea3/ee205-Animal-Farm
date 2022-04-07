@@ -14,6 +14,7 @@
 #include <string.h>
 #include <iostream>
 #include "reportCats.h"
+#include "Cat.h"
 
 using namespace std;
 
@@ -49,25 +50,25 @@ int findCat( const char findName[] ){
 }
  */
 
-const char* genderToString ( const enum Gender convertGender ) {
+const char* genderToString ( const enum Cat::Gender convertGender ) {
     switch( convertGender ){
-        case UNKNOWN_GENDER: return "UNKNOWN GENDER";
-        case MALE:           return "MALE";
-        case FEMALE:         return "FEMALE";
+        case Cat::UNKNOWN_GENDER: return "UNKNOWN GENDER";
+        case Cat::MALE:           return "MALE";
+        case Cat::FEMALE:         return "FEMALE";
         default:             cout << __FILE__ << ": Error, invalid gender" << endl ;
             break;
     }
     return 0;
 }
 
-const char* breedToString ( const enum Breed convertBreed ) {
+const char* breedToString ( const enum Cat::Breed convertBreed ) {
     switch( convertBreed ){
-        case UNKNOWN_BREED: return "UNKNOWN BREED";
-        case MAINE_COON:    return "MAINE COON";
-        case MANX:          return "MANX";
-        case SHORTHAIR:     return "SHORTHAIR";
-        case PERSIAN:       return "PERSIAN";
-        case SPHYNX:        return "SPHYNX";
+        case Cat::UNKNOWN_BREED: return "UNKNOWN BREED";
+        case Cat::MAINE_COON:    return "MAINE COON";
+        case Cat::MANX:          return "MANX";
+        case Cat::SHORTHAIR:     return "SHORTHAIR";
+        case Cat::PERSIAN:       return "PERSIAN";
+        case Cat::SPHYNX:        return "SPHYNX";
         default:            cout << __FILE__ << ": Error, invalid breed" << endl ;
             break;
     }
