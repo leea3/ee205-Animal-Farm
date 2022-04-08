@@ -63,35 +63,42 @@ bool Cat::printCat() const noexcept {
 
 bool Cat::validateCat() const noexcept {
     try {
-        validateName(name);
+        validateName  (name     );
+        validateBreed ( breed   );
+        validateGender( gender );
+        validateWeight( weight );
     }
-    catch(const exception& e){
-        cout << e.what() << endl;
+    catch(const std::exception& e){
+        return ERROR;
     }
     return NOERROR;
 }
 
-bool Cat::validateName( const char* newName ) const {
-    if ( newName            == nullptr )
+bool Cat::validateName( const char* newName ) {
+    if ( newName == nullptr )
         throw invalid_argument( PROGRAM_NAME ": New cat name cannot be null." );
     if ( strlen( newName )  == 0 )
-        throw invalid_argument( PROGRAM_NAME ": New cat name cannot be empty.");
+        throw length_error( PROGRAM_NAME ": New cat name cannot be empty.");
     if ( strlen( newName )  >  CATNAME_CHARLIMIT )
-        throw invalid_argument( PROGRAM_NAME ": New cat name cannot exceed CATNAME_CHARLIMIT characters");
+        throw length_error( PROGRAM_NAME ": New cat name cannot exceed CATNAME_CHARLIMIT characters");
 
     return NOERROR;
 }
 
-bool Cat::validateGender(const Gender newGender) const noexcept {
-
+bool Cat::validateGender(const Gender newGender) {
+    if ( newGender == UNKNOWN_GENDER ) throw logic_error( PROGRAM_NAME ": Cat's gender must be known.");
+    return NOERROR;
 }
 
-bool Cat::validateBreed( const Breed newBreed ) const noexcept {
-
+bool Cat::validateBreed( const Breed newBreed ) {
+    if ( newBreed == UNKNOWN_BREED ) throw logic_error( PROGRAM_NAME ": Cat's breed must be known");
+    return NOERROR;
 }
 
-bool Cat::validateWeight( const Weight newWeight ) const noexcept {
-
+bool Cat::validateWeight( const Weight newWeight ) {
+    if( newWeight <= 0.0 )
+        throw std::logic_error( PROGRAM_NAME ": Cat must have a valid weight greater than 0.");
+    return NOERROR;
 }
 
     //@todo Add Validation

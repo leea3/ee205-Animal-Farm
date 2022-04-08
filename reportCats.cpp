@@ -13,8 +13,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <iostream>
+#include <stdexcept>
 #include "reportCats.h"
 #include "Cat.h"
+#include "config.h"
 
 using namespace std;
 
@@ -51,14 +53,12 @@ int findCat( const char findName[] ){
  */
 
 const char* genderToString ( const enum Cat::Gender convertGender ) {
-    switch( convertGender ){
+    switch (convertGender) {
         case Cat::UNKNOWN_GENDER: return "UNKNOWN GENDER";
         case Cat::MALE:           return "MALE";
         case Cat::FEMALE:         return "FEMALE";
-        default:             cout << __FILE__ << ": Error, invalid gender" << endl ;
-            break;
+        default:                  throw invalid_argument(PROGRAM_NAME ": Invalid Gender");
     }
-    return 0;
 }
 
 const char* breedToString ( const enum Cat::Breed convertBreed ) {
@@ -69,10 +69,8 @@ const char* breedToString ( const enum Cat::Breed convertBreed ) {
         case Cat::SHORTHAIR:     return "SHORTHAIR";
         case Cat::PERSIAN:       return "PERSIAN";
         case Cat::SPHYNX:        return "SPHYNX";
-        default:            cout << __FILE__ << ": Error, invalid breed" << endl ;
-            break;
+        default:                 throw invalid_argument( PROGRAM_NAME ": Invalid Breed" );
     }
-    return 0;
 }
 
  /*
