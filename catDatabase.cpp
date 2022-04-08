@@ -13,6 +13,8 @@
 #include <string.h>
 #include "catDatabase.h"
 
+Cat* catDatabaseHeadPointer = nullptr;
+
 /*
 
 //stored number of cats in database as global variables

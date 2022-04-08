@@ -12,9 +12,12 @@
 #pragma once
 #include <stdbool.h>
 #include "config.h"
+#include "Cat.h"
 
 #define MAX_CATS (1024)
 #define CATNAME_CHARLIMIT (50)
+
+extern Cat* catDatabaseHeadPointer;
 
 enum Gender { UNKNOWN_GENDER = 0
     ,MALE = 1
