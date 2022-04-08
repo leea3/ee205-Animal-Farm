@@ -22,7 +22,11 @@
 using namespace std;
 
 Cat::Cat() {
-
+    memset( name , 0 , CATNAME_CHARLIMIT );
+    gender     = UNKNOWN_GENDER;
+    breed      = UNKNOWN_BREED;
+    isFixed    = false;
+    weight     = 0.0;
 }
 
 Cat::Cat(const char* newName,
@@ -40,7 +44,7 @@ Cat::Cat(const char* newName,
     }
 
 Cat::~Cat(){
-    memset( name , 0 , 10 );
+    memset( name , 0 , CATNAME_CHARLIMIT );
     gender     = UNKNOWN_GENDER;
     breed      = UNKNOWN_BREED;
     isFixed    = false;
@@ -101,16 +105,19 @@ bool Cat::validateWeight( const Weight newWeight ) {
     return NOERROR;
 }
 
-    //@todo Add Validation
 void Cat::setName(const char* newName) {
+    validateName( newName );
+    memset( name , 0 , CATNAME_CHARLIMIT );
     strcpy(Cat::name, newName);
 }
 
 void Cat::setGender(const Gender newGender) {
+    validateGender( newGender );
     Cat::gender = newGender;
 }
 
 void Cat::setBreed(const Breed newBreed) {
+    validateBreed( newBreed );
     Cat::breed = newBreed;
 }
     //@todo Add Validation
