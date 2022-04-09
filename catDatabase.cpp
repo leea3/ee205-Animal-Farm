@@ -11,14 +11,25 @@
 
 #include <stdbool.h>
 #include <string.h>
+#include <assert.h>
 #include "catDatabase.h"
 
+//linked list head pointer
 Cat* catDatabaseHeadPointer = nullptr;
-
-/*
 
 //stored number of cats in database as global variables
 NumCats numberOfCats;
+
+bool validateDatabase(){
+    Cat* checkCat = catDatabaseHeadPointer;
+    while( checkCat != nullptr ){
+        assert( checkCat -> Cat::validateCat() == NOERROR );
+        checkCat = checkCat -> next;
+    }
+    return NOERROR;
+}
+
+/*
 
 //allocate memory to struct
 struct cat_database catabase[MAX_CATS];

@@ -16,6 +16,19 @@
 #include "addCats.h"
 #include "config.h"
 
+int addCat( Cat* newCat ){
+
+    assert( validateDatabase() == NOERROR ); //check if database is good
+    assert( newCat -> Cat::validateCat() == NOERROR ); //check if the cat is good
+
+    newCat -> next = catDatabaseHeadPointer;
+    catDatabaseHeadPointer = newCat;
+    numberOfCats++;
+
+    assert( validateDatabase() == NOERROR );
+
+    return NOERROR;
+}
 /*
 
 int addCat(  const char                addName[]

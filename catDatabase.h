@@ -19,6 +19,8 @@
 
 extern Cat* catDatabaseHeadPointer;
 
+extern bool validateDatabase();
+
 enum Gender { UNKNOWN_GENDER = 0
     ,MALE = 1
     ,FEMALE = 2 };

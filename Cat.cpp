@@ -27,12 +27,13 @@ Cat::Cat() {
     breed      = UNKNOWN_BREED;
     isFixed    = false;
     weight     = 0.0;
+    next       = nullptr;
 }
 
 Cat::Cat(const char* newName,
          const Cat::Gender newGender,
          const Cat::Breed newBreed,
-         const float newWeight) : Cat() {
+         const Cat::Weight newWeight) : Cat() {
 
             //set default values to new cats
             setName( newName );
@@ -49,6 +50,7 @@ Cat::~Cat(){
     breed      = UNKNOWN_BREED;
     isFixed    = false;
     weight     = 0.0;
+    next       = nullptr;
 }
 
 bool Cat::printCat() const noexcept {

@@ -14,6 +14,7 @@
 #include <assert.h>
 #include <iostream>
 #include "addCats.h"
+#include "Cat.h"
 #include "catDatabase.h"
 #include "reportCats.h"
 #include "updateCats.h"
@@ -25,9 +26,10 @@ using namespace std;
 int main() {
     cout << "Starting " << PROGRAM_NAME << endl ;
 
+    cout << numberOfCats << endl;
+    addCat( new Cat("Loki", Cat::MALE, Cat::PERSIAN, 1.0 )) ;
+    cout << numberOfCats << endl;
     /*
-    initializeDatabase() ;
-    addCat( "Loki", MALE, PERSIAN, true, 8.5, BLACK, WHITE, 101 ) ;
     addCat( "Milo", MALE, MANX, true, 7.0, BLACK, RED, 102 ) ;
     addCat( "Bella", FEMALE, MAINE_COON, true, 18.2, BLACK, BLUE, 103 ) ;
     addCat( "Kali", FEMALE, SHORTHAIR, false, 9.2, BLACK, GREEN, 104 ) ;

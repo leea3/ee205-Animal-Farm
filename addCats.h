@@ -11,8 +11,10 @@
 
 #pragma once
 #include <stdbool.h>
+#include <assert.h>
 #include "catDatabase.h"
 #include "config.h"
+#include "Cat.h"
 
 /** Function that adds cats to database
  *
@@ -22,7 +24,10 @@
  * @param is the cat fixed
  * @param weight of the cat
  */
-extern int addCat( const char               addName[]
+
+extern int addCat( Cat* newCat );
+
+/*extern int addCat( const char               addName[]
         ,const enum               Gender addGender
         ,const enum               Breed addBreed
         ,const bool               addFixed
@@ -30,7 +35,7 @@ extern int addCat( const char               addName[]
         ,const enum               Color addCollar1
         ,const enum               Color addCollar2
         ,const unsigned long long addLicense );
-
+*/
 /* Checks if the number of cats exceeds the database limit
  *
  * if Database is not full, returns 0
