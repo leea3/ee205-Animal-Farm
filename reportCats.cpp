@@ -9,17 +9,23 @@
 /// @date   10_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <iostream>
 #include <stdexcept>
+#include <assert.h>
 #include "reportCats.h"
 #include "Cat.h"
+#include "catDatabase.h"
 #include "config.h"
 
 using namespace std;
 
+void printAllCats(){
+    Cat* currentCat = catDatabaseHeadPointer;
+    assert( validateDatabase() == NOERROR ); //check if database is healthy
+    while( currentCat != nullptr ){
+        currentCat -> Cat::printCat();
+        currentCat = currentCat -> next;
+    }
+}
 /*
 
 void printCat( const int index ) {

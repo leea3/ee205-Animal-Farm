@@ -29,6 +29,7 @@ int main() {
     cout << numberOfCats << endl;
     addCat( new Cat("Loki", Cat::MALE, Cat::PERSIAN, 1.0 )) ;
     cout << numberOfCats << endl;
+    printAllCats();
     /*
     addCat( "Milo", MALE, MANX, true, 7.0, BLACK, RED, 102 ) ;
     addCat( "Bella", FEMALE, MAINE_COON, true, 18.2, BLACK, BLUE, 103 ) ;
