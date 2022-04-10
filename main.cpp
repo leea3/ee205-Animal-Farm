@@ -37,6 +37,8 @@ int main() {
     Cat* Kali = findCatByName("Kali");
     deleteCat( Kali );
     printAllCats();
+    deleteAllCats();
+    printAllCats();
 
 
     /*

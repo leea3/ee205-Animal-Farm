@@ -13,8 +13,11 @@
 #include <string.h>
 #include <stdexcept>
 #include <assert.h>
+#include <iostream>
 #include "updateCats.h"
 #include "deleteCats.h"
+
+using namespace std;
 
 void deleteCat( Cat* targetCat ){
     Cat* currentCat = catDatabaseHeadPointer;
@@ -42,15 +45,22 @@ void deleteCat( Cat* targetCat ){
         return;
     }
 }
-/*
 
 void deleteAllCats( ) {
 
-    numberOfCats = 0;  //changes global variable found in catDatabase.h to 0
-    printf("deleted all cats\n");
+    Cat* currentCat = catDatabaseHeadPointer;
+    assert( validateDatabase() == 0 );
+
+    while( currentCat != nullptr ){
+        delete currentCat;
+        currentCat = currentCat -> next;
+    }
+    catDatabaseHeadPointer = nullptr;
+    cout << PROGRAM_NAME << ": database has been wiped" << endl;
 
 }
 
+/*
 void deleteCat( const int index ) {
 
     if( isIndexValid(index) == 0 ) { //checks if inputted index is occupied by a cat
