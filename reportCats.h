@@ -29,7 +29,7 @@ extern void printAllCats( );
  *
  * @param name of the cat in quotes (i.e. "Chili")
  */
-extern int findCat( const char findName[] );
+extern Cat* findCatByName( const char* findName );
 
 /* maps gender enum to string
  *

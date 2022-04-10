@@ -25,7 +25,7 @@
  * @param weight of the cat
  */
 
-extern int addCat( Cat* newCat );
+extern void addCat( Cat* newCat );
 
 /*extern int addCat( const char               addName[]
         ,const enum               Gender addGender

@@ -26,6 +26,11 @@ void printAllCats(){
         currentCat = currentCat -> next;
     }
 }
+
+Cat* findCatByName( const char* findName ) {
+
+}
+
 /*
 
 void printCat( const int index ) {

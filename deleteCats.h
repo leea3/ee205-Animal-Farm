@@ -11,6 +11,7 @@
 
 #pragma once
 #include "catDatabase.h"
+#include "Cat.h"
 
 /* sets numberOfCats to zero
  *
@@ -25,4 +26,4 @@ extern void deleteAllCats( );
  *
  * @param array index to be deleted
  */
-extern void deleteCat( const int index );
+extern void deleteCat( Cat* targetCat );

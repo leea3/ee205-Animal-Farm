@@ -11,9 +11,37 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdexcept>
+#include <assert.h>
 #include "updateCats.h"
 #include "deleteCats.h"
 
+void deleteCat( Cat* targetCat ){
+    Cat* currentCat = catDatabaseHeadPointer;
+    Cat* prevCat = nullptr;
+    assert( validateDatabase() == NOERROR );
+    //If the targetCat is the first node
+    if( targetCat == catDatabaseHeadPointer ){
+        catDatabaseHeadPointer = catDatabaseHeadPointer -> next;
+        delete targetCat;
+        numberOfCats--;
+        return;
+    }
+    else {
+        //general case
+        while (currentCat != nullptr && currentCat != targetCat) {
+            prevCat = currentCat;
+            currentCat = currentCat->next;
+        }
+        if( currentCat == nullptr )
+            throw std::invalid_argument(PROGRAM_NAME ": entered cat does not exist");
+
+        prevCat->next = currentCat->next;
+        delete targetCat; //deallocate memory
+        numberOfCats--;
+        return;
+    }
+}
 /*
 
 void deleteAllCats( ) {
