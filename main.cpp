@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include <cassert>
-#include <string.h>
+#include <cstring>
 #include <iostream>
 #include "addCats.h"
 #include "Cat.h"

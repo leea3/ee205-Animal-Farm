@@ -36,9 +36,9 @@ Cat::Cat(const char* newName,
          const Cat::Weight newWeight) : Cat() {
 
             //set default values to new cats
-            setName( newName );
+            setName  ( newName   );
             setGender( newGender );
-            setBreed( newBreed );
+            setBreed ( newBreed  );
             setWeight( newWeight );
 
 
@@ -136,7 +136,7 @@ void Cat::fixCat() {
     Cat::isFixed = true;
 }
 
-void Cat::setWeight(Weight newWeight) {
+void Cat::setWeight(const Weight newWeight) {
     validateWeight( newWeight );
     Cat::weight = newWeight;
 }

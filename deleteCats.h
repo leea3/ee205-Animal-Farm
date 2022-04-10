@@ -14,12 +14,8 @@
 #include "Cat.h"
 
 
-/* deletes array elements at specified index
- *
- * everything above deleted element gets shifted down
- *
- * @param array index to be deleted
- */
+//deletes a node from the linked list
 extern void deleteCat( Cat* targetCat );
 
+//deallocates memory and sets head pointer to null
 extern void deleteAllCats( );

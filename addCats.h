@@ -12,13 +12,6 @@
 #pragma once
 #include "Cat.h"
 
-/** Function that adds cats to database
- *
- * @param name of the cat to added
- * @param gender of the cat
- * @param breed of the cat
- * @param is the cat fixed
- * @param weight of the cat
- */
 
+// adds a cat to the front of a singly linked list
 extern void addCat( Cat* newCat );

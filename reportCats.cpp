@@ -10,7 +10,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include <stdexcept>
-#include <cassert>
 #include <cstring>
 #include "reportCats.h"
 #include "Cat.h"

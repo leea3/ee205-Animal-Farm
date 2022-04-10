@@ -18,21 +18,20 @@ public: //enums and typedefs
     typedef int   NumCats;
 
     enum Gender { UNKNOWN_GENDER = 0
-        ,MALE = 1
-        ,FEMALE = 2 };
+        ,MALE                    = 1
+        ,FEMALE                  = 2 };
 
     enum Breed { UNKNOWN_BREED = 0
-        ,MAINE_COON = 1
-        ,MANX = 2
-        ,SHORTHAIR = 3
-        ,PERSIAN = 4
-        ,SPHYNX = 5 };
+        ,MAINE_COON            = 1
+        ,MANX                  = 2
+        ,SHORTHAIR             = 3
+        ,PERSIAN               = 4
+        ,SPHYNX                = 5 };
 
 protected: //Protected member variables
     char          name[CATNAME_CHARLIMIT] ;
     enum   Gender gender ;
     enum   Breed  breed ;
-    //enum Color  color;
     bool          isFixed;
     Weight        weight;
 

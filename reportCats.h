@@ -15,28 +15,12 @@
 // Prints the contents of the entire database
 extern void printAllCats( );
 
-/* Returns the cat's index if a name is fed through
- *
- * if cat cannot be found, terminates program
- *
- * @param name of the cat in quotes (i.e. "Chili")
- */
+// Allows a node/cat to be found by entering a character array with the cat's name (case/whitespace sensitive)
 extern Cat* findCatByName( const char* findName );
 
-/* maps gender enum to string
- *
- * @param gender of the cat
- */
+// maps gender enum to a string
 extern const char* genderToString ( const enum Cat::Gender convertGender );
 
-/* maps breed enum to string
- *
- * @param breed of the cat
- */
+// maps breed enum to a string
 extern const char* breedToString ( const enum Cat::Breed convertBreed );
 
-/* maps color enum to string
- *
- * @param color of the cat's collar
- */
-//extern const char* colorToString ( const enum Color convertColor );

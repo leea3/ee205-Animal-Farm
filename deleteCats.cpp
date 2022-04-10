@@ -10,7 +10,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include <stdexcept>
-#include <cassert>
 #include <iostream>
 #include "deleteCats.h"
 
@@ -55,6 +54,7 @@ void deleteAllCats( ) {
     Cat* currentCat = catDatabaseHeadPointer;
     validateDatabase();
 
+    //deallocating memory
     while( currentCat != nullptr ){
         delete currentCat;
         currentCat = currentCat -> next;

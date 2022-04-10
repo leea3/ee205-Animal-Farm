@@ -10,13 +10,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 #pragma once
 
-typedef double Weight;
-typedef int NumCats;
-
 #define ERROR (1)
 #define NOERROR (0)
-#define BAD_CAT (-1)
 #define MAX_NAME1 "12345678901234567890123456789012345678901234567890"
-#define MAX_NAME2 "DIFFERENT 1234567890123456789012345678901234567890"
 #define ILLEGAL_NAME "123456789012345678901234567890123456789012345678901"
 #define PROGRAM_NAME "Animal Farm 2"

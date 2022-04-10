@@ -9,7 +9,7 @@
 /// @date   10_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 
-#include <assert.h>
+#include <cassert>
 #include "addCats.h"
 #include "config.h"
 #include "catDatabase.h"

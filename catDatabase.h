@@ -13,33 +13,13 @@
 #include "config.h"
 #include "Cat.h"
 
-#define MAX_CATS (1024)
 #define CATNAME_CHARLIMIT (50)
 
+//linked list head pointer
 extern Cat* catDatabaseHeadPointer;
 
+//checks each cat entry and makes sure it's valid. If not, animalFarm program is terminated
 extern bool validateDatabase();
 
 //Note: Current number of cats in database held as a global variable
-extern NumCats numberOfCats;
-
-/*
-enum Gender { UNKNOWN_GENDER = 0
-    ,MALE = 1
-    ,FEMALE = 2 };
-
-enum Breed { UNKNOWN_BREED = 0
-    ,MAINE_COON = 1
-    ,MANX = 2
-    ,SHORTHAIR = 3
-    ,PERSIAN = 4
-    ,SPHYNX = 5 };
-
-enum Color { BLACK = 0
-    ,WHITE = 1
-    ,RED = 2
-    ,BLUE = 3
-    ,GREEN = 4
-    ,PINK = 5 };
-
- */
+extern Cat::NumCats numberOfCats;

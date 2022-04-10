@@ -11,12 +11,10 @@
 
 #include <cassert>
 #include "catDatabase.h"
+#include "Cat.h"
 
-//linked list head pointer
 Cat* catDatabaseHeadPointer = nullptr;
-
-//stored number of cats in database as global variables
-NumCats numberOfCats;
+Cat::NumCats numberOfCats;
 
 bool validateDatabase(){
     Cat* checkCat = catDatabaseHeadPointer;
