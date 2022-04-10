@@ -8,8 +8,8 @@
 /// @author Arthur Lee <leea3@hawaii.edu>
 /// @date   10_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
-#include <assert.h>
-#include <string.h>
+#include <cassert>
+#include <cstring>
 #include <iostream>
 #include <iomanip>
 #include <stdexcept>
@@ -69,8 +69,8 @@ bool Cat::printCat() const noexcept {
 
 bool Cat::validateCat() const noexcept {
     try {
-        validateName  (name     );
-        validateBreed ( breed   );
+        validateName  ( name   );
+        validateBreed ( breed  );
         validateGender( gender );
         validateWeight( weight );
     }
@@ -123,7 +123,8 @@ void Cat::setBreed(const Breed newBreed) {
     Cat::breed = newBreed;
 }
     //@todo Add Validation
-void Cat::setWeight(float newWeight) {
+void Cat::setWeight(Weight newWeight) {
+    validateWeight( newWeight );
     Cat::weight = newWeight;
 }
 

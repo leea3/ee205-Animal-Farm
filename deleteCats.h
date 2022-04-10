@@ -13,12 +13,6 @@
 #include "catDatabase.h"
 #include "Cat.h"
 
-/* sets numberOfCats to zero
- *
- * changes high water mark to 0
- * note: data still exists
- */
-extern void deleteAllCats( );
 
 /* deletes array elements at specified index
  *
@@ -27,3 +21,5 @@ extern void deleteAllCats( );
  * @param array index to be deleted
  */
 extern void deleteCat( Cat* targetCat );
+
+extern void deleteAllCats( );

@@ -10,7 +10,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #pragma once
-#include <stdbool.h>
 #include "config.h"
 #include "Cat.h"
 
@@ -21,6 +20,10 @@ extern Cat* catDatabaseHeadPointer;
 
 extern bool validateDatabase();
 
+//Note: Current number of cats in database held as a global variable
+extern NumCats numberOfCats;
+
+/*
 enum Gender { UNKNOWN_GENDER = 0
     ,MALE = 1
     ,FEMALE = 2 };
@@ -39,25 +42,4 @@ enum Color { BLACK = 0
     ,GREEN = 4
     ,PINK = 5 };
 
-struct cat_database{
-    char name[CATNAME_CHARLIMIT];
-    enum Gender gender;
-    enum Breed breed;
-    bool fixed;
-    Weight weight;
-    enum Color collarColor1;
-    enum Color collarColor2;
-    unsigned long long license;
-};
-
-//externs struct so that other files can access it
-extern struct cat_database catabase[MAX_CATS];
-
-//Note: Current number of cats in database held as a global variable
-extern NumCats numberOfCats;
-
-/* Zeroes out the database based on MAX_CATS
- *
- * zeros out the five arrays and number of cats in database
  */
-extern void initializeDatabase( );

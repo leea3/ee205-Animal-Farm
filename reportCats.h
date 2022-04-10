@@ -12,14 +12,6 @@
 #pragma once
 #include "Cat.h"
 
-/* Prints database contents at a specified index
- *
- * if index is invalid, outputs an error and moves on with the program
- *
- * @param index of the cat
- */
-extern void printCat( const int index );
-
 // Prints the contents of the entire database
 extern void printAllCats( );
 

@@ -9,12 +9,9 @@
 /// @date   10_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 
-#include <stdio.h>
-#include <string.h>
 #include <stdexcept>
-#include <assert.h>
+#include <cassert>
 #include <iostream>
-#include "updateCats.h"
 #include "deleteCats.h"
 
 using namespace std;
@@ -28,6 +25,7 @@ void deleteCat( Cat* targetCat ){
         catDatabaseHeadPointer = catDatabaseHeadPointer -> next;
         delete targetCat;
         numberOfCats--;
+        assert( validateDatabase() == NOERROR );
         return;
     }
     else {
@@ -42,6 +40,7 @@ void deleteCat( Cat* targetCat ){
         prevCat->next = currentCat->next;
         delete targetCat; //deallocate memory
         numberOfCats--;
+        assert( validateDatabase() == NOERROR );
         return;
     }
 }
@@ -49,34 +48,16 @@ void deleteCat( Cat* targetCat ){
 void deleteAllCats( ) {
 
     Cat* currentCat = catDatabaseHeadPointer;
-    assert( validateDatabase() == 0 );
+    assert( validateDatabase() == NOERROR );
 
     while( currentCat != nullptr ){
         delete currentCat;
         currentCat = currentCat -> next;
     }
     catDatabaseHeadPointer = nullptr;
+    numberOfCats = 0;
+    assert( validateDatabase() == NOERROR );
     cout << PROGRAM_NAME << ": database has been wiped" << endl;
 
+
 }
-
-/*
-void deleteCat( const int index ) {
-
-    if( isIndexValid(index) == 0 ) { //checks if inputted index is occupied by a cat
-        for ( int i = index ; i < MAX_CATS - 1; i++ ) {
-            strcpy( catabase[i].name ,  catabase[i+1].name );
-            catabase[i].gender        = catabase[i+1].gender;
-            catabase[i].breed         = catabase[i+1].breed;
-            catabase[i].fixed         = catabase[i+1].fixed;
-            catabase[i].weight        = catabase[i+1].weight;
-            catabase[i].collarColor1  = catabase[i+1].collarColor1;
-            catabase[i].collarColor2  = catabase[i+1].collarColor2;
-            catabase[i].license       = catabase[i+1].license;
-        }
-        numberOfCats--;
-    }
-    else fprintf( stderr, "%s: Error, cannor delete cat at index [%d]\n", __FILE__, index);
-}
-
-*/

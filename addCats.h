@@ -10,10 +10,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #pragma once
-#include <stdbool.h>
-#include <assert.h>
-#include "catDatabase.h"
-#include "config.h"
 #include "Cat.h"
 
 /** Function that adds cats to database
@@ -26,38 +22,3 @@
  */
 
 extern void addCat( Cat* newCat );
-
-/*extern int addCat( const char               addName[]
-        ,const enum               Gender addGender
-        ,const enum               Breed addBreed
-        ,const bool               addFixed
-        ,const Weight             addWeight
-        ,const enum               Color addCollar1
-        ,const enum               Color addCollar2
-        ,const unsigned long long addLicense );
-*/
-/* Checks if the number of cats exceeds the database limit
- *
- * if Database is not full, returns 0
- * else, terminates program
- */
-extern int isFull( );
-
-/* Checks if the name is valid
- *
- * Cat's name must be under the character limit, not blank, and not a copy of another cat's name
- * If the name is valid, returns 0
- * else, terminates program
- *
- * @param name of the cat
- */
-extern int isValidName( const char checkName[] );
-
-/* Checks if entered weight is a valid number
- *
- * If weight is valid, returns 0
- * else, terminates program
- *
- * @param weight of the cat
- */
-extern int isValidWeight( const Weight checkWeight );

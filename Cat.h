@@ -28,15 +28,6 @@ public: //enums and typedefs
         ,PERSIAN = 4
         ,SPHYNX = 5 };
 
-    /*
-    enum Color { BLACK = 0
-        ,WHITE = 1
-        ,RED = 2
-        ,BLUE = 3
-        ,GREEN = 4
-        ,PINK = 5 };
-    */
-
 protected: //Protected member variables
     char          name[CATNAME_CHARLIMIT] ;
     enum   Gender gender ;
