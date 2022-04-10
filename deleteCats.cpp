@@ -25,6 +25,7 @@ void deleteCat( Cat* targetCat ){
     //If the targetCat is the first node
     if( targetCat == catDatabaseHeadPointer ){
         catDatabaseHeadPointer = catDatabaseHeadPointer -> next;
+        cout << targetCat -> getName() << " has been deleted from the database." << endl;
         delete targetCat;
         numberOfCats--;
         validateDatabase();
@@ -41,6 +42,7 @@ void deleteCat( Cat* targetCat ){
             throw std::invalid_argument(PROGRAM_NAME ": entered cat does not exist");
 
         prevCat->next = currentCat->next;
+        cout << targetCat -> getName() << " has been deleted from the database." << endl;
         delete targetCat; //deallocate memory
         numberOfCats--;
         validateDatabase();

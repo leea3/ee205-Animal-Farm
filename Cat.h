@@ -55,6 +55,7 @@ public: //getters and setters
     void setName   ( const char*  name   );
     void setGender ( const Gender gender );
     void setBreed  ( const Breed  breed  );
+    void fixCat    (                     );
     void setWeight ( const Weight weight );
 
     const  char* getName()    const;

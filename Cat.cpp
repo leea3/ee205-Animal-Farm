@@ -74,7 +74,8 @@ bool Cat::validateCat() const noexcept {
         validateGender( gender );
         validateWeight( weight );
     }
-    catch(...){
+    catch(const exception& e){
+        cout << e.what() << endl;
         return ERROR;
     }
     return NOERROR;
@@ -116,13 +117,23 @@ void Cat::setName(const char* newName) {
 }
 
 void Cat::setGender(const Gender newGender) {
+    if( gender != UNKNOWN_GENDER )
+        throw logic_error( PROGRAM_NAME ": You can't change an existing, known gender" ) ;
+
     validateGender( newGender );
     Cat::gender = newGender;
 }
 
 void Cat::setBreed(const Breed newBreed) {
+    if( breed != UNKNOWN_BREED )
+        throw logic_error( PROGRAM_NAME ": You can't change an existing, known breed" ) ;
+
     validateBreed( newBreed );
     Cat::breed = newBreed;
+}
+
+void Cat::fixCat() {
+    Cat::isFixed = true;
 }
 
 void Cat::setWeight(Weight newWeight) {
