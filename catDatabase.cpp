@@ -21,7 +21,7 @@ NumCats numberOfCats;
 bool validateDatabase(){
     Cat* checkCat = catDatabaseHeadPointer;
     while( checkCat != nullptr ){
-        assert( checkCat -> Cat::validateCat() == NOERROR );
+        assert( (checkCat -> Cat::validateCat() == NOERROR) && "There is something wrong with the database\n");
         checkCat = checkCat -> next;
     }
     return NOERROR;

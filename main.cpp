@@ -9,9 +9,7 @@
 /// @date   10_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 
-#include <stdio.h>
-#include <stdbool.h>
-#include <assert.h>
+#include <cassert>
 #include <iostream>
 #include "addCats.h"
 #include "Cat.h"

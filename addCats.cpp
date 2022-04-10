@@ -16,9 +16,8 @@
 
 void addCat( Cat* newCat ){
 
-    assert( validateDatabase() == NOERROR ); //check if database is good
-    assert( newCat -> Cat::validateCat() == NOERROR ); //check if the cat is good
-
+    assert( validateDatabase() == NOERROR ); //check if database is healthy
+    newCat -> Cat::validateCat(); //check if the cat entry is valid
     newCat -> next = catDatabaseHeadPointer;
     catDatabaseHeadPointer = newCat;
     numberOfCats++;

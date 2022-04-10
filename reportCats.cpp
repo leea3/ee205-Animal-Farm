@@ -21,7 +21,8 @@ using namespace std;
 
 void printAllCats(){
     Cat* currentCat = catDatabaseHeadPointer;
-    assert( validateDatabase() == NOERROR ); //check if database is healthy
+
+    validateDatabase(); //check if database is healthy
     while( currentCat != nullptr ){
         currentCat -> Cat::printCat();
         currentCat = currentCat -> next;
@@ -30,7 +31,7 @@ void printAllCats(){
 
 Cat* findCatByName( const char* findName ) {
     Cat* currentCat = catDatabaseHeadPointer;
-    assert( validateDatabase() == NOERROR );
+    validateDatabase();
 
     while( currentCat != nullptr ){
         if( strcmp( findName, currentCat -> getName() ) == 0)
@@ -38,7 +39,7 @@ Cat* findCatByName( const char* findName ) {
         currentCat = currentCat -> next;
     }
     //if cat can't be found
-    throw std::invalid_argument(PROGRAM_NAME ":  cat does not exist in database");
+    throw std::invalid_argument(PROGRAM_NAME ":  cannot find cat as it does not exist in the database");
 }
 
 const char* genderToString ( const enum Cat::Gender convertGender ) {

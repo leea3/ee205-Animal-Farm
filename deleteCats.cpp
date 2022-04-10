@@ -19,13 +19,15 @@ using namespace std;
 void deleteCat( Cat* targetCat ){
     Cat* currentCat = catDatabaseHeadPointer;
     Cat* prevCat = nullptr;
-    assert( validateDatabase() == NOERROR );
+
+    validateDatabase();
+
     //If the targetCat is the first node
     if( targetCat == catDatabaseHeadPointer ){
         catDatabaseHeadPointer = catDatabaseHeadPointer -> next;
         delete targetCat;
         numberOfCats--;
-        assert( validateDatabase() == NOERROR );
+        validateDatabase();
         return;
     }
     else {
@@ -34,13 +36,14 @@ void deleteCat( Cat* targetCat ){
             prevCat = currentCat;
             currentCat = currentCat->next;
         }
+        //Case where cat does not exist in database
         if( currentCat == nullptr )
             throw std::invalid_argument(PROGRAM_NAME ": entered cat does not exist");
 
         prevCat->next = currentCat->next;
         delete targetCat; //deallocate memory
         numberOfCats--;
-        assert( validateDatabase() == NOERROR );
+        validateDatabase();
         return;
     }
 }
@@ -48,7 +51,7 @@ void deleteCat( Cat* targetCat ){
 void deleteAllCats( ) {
 
     Cat* currentCat = catDatabaseHeadPointer;
-    assert( validateDatabase() == NOERROR );
+    validateDatabase();
 
     while( currentCat != nullptr ){
         delete currentCat;
@@ -56,7 +59,8 @@ void deleteAllCats( ) {
     }
     catDatabaseHeadPointer = nullptr;
     numberOfCats = 0;
-    assert( validateDatabase() == NOERROR );
+
+    validateDatabase();
     cout << PROGRAM_NAME << ": database has been wiped" << endl;
 
 

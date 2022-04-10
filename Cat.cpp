@@ -62,7 +62,7 @@ bool Cat::printCat() const noexcept {
     FORMAT_LINE( "Cat", "name" )    << getName()                     << endl ;
     FORMAT_LINE( "Cat", "gender" )  << genderToString( getGender() ) << endl ;
     FORMAT_LINE( "Cat", "breed" )   << breedToString( getBreed() )   << endl ;
-    FORMAT_LINE( "Cat", "isFixed" ) << getFixed()                  << endl ;
+    FORMAT_LINE( "Cat", "isFixed" ) << getFixed()                    << endl ;
     FORMAT_LINE( "Cat", "weight" )  << getWeight()                   << endl ;
     return true ;
 }
@@ -74,7 +74,7 @@ bool Cat::validateCat() const noexcept {
         validateGender( gender );
         validateWeight( weight );
     }
-    catch(const std::exception& e){
+    catch(...){
         return ERROR;
     }
     return NOERROR;
@@ -92,12 +92,14 @@ bool Cat::validateName( const char* newName ) {
 }
 
 bool Cat::validateGender(const Gender newGender) {
-    if ( newGender == UNKNOWN_GENDER ) throw logic_error( PROGRAM_NAME ": Cat's gender must be known.");
+    if ( newGender == UNKNOWN_GENDER )
+        throw logic_error( PROGRAM_NAME ": Cat's gender must be known.");
     return NOERROR;
 }
 
 bool Cat::validateBreed( const Breed newBreed ) {
-    if ( newBreed == UNKNOWN_BREED ) throw logic_error( PROGRAM_NAME ": Cat's breed must be known");
+    if ( newBreed == UNKNOWN_BREED )
+        throw logic_error( PROGRAM_NAME ": Cat's breed must be known");
     return NOERROR;
 }
 
@@ -122,7 +124,7 @@ void Cat::setBreed(const Breed newBreed) {
     validateBreed( newBreed );
     Cat::breed = newBreed;
 }
-    //@todo Add Validation
+
 void Cat::setWeight(Weight newWeight) {
     validateWeight( newWeight );
     Cat::weight = newWeight;
