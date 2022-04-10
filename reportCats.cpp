@@ -11,6 +11,7 @@
 
 #include <stdexcept>
 #include <assert.h>
+#include <string.h>
 #include "reportCats.h"
 #include "Cat.h"
 #include "catDatabase.h"
@@ -28,7 +29,16 @@ void printAllCats(){
 }
 
 Cat* findCatByName( const char* findName ) {
+    Cat* currentCat = catDatabaseHeadPointer;
+    assert( validateDatabase() == NOERROR );
 
+    while( currentCat != nullptr ){
+        if( strcmp( findName, currentCat -> getName() ) == 0)
+            return currentCat;
+        currentCat = currentCat -> next;
+    }
+    //if cat can't be found
+    throw std::invalid_argument(PROGRAM_NAME ":  cat does not exist in database");
 }
 
 /*

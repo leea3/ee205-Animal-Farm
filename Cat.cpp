@@ -54,7 +54,7 @@ Cat::~Cat(){
 }
 
 bool Cat::printCat() const noexcept {
-    assert( validateCat() ) ;
+    assert( validateCat() == NOERROR ) ;
     cout << setw(80) << setfill( '=' ) << "" << endl ;
     cout << setfill( ' ' ) ;
     cout << left ;

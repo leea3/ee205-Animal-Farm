@@ -33,7 +33,9 @@ int main() {
     addCat( new Cat( "Kali", Cat::FEMALE, Cat::SHORTHAIR, 1.3 )) ;
     addCat( new Cat( "Trin", Cat::FEMALE, Cat::MANX, 1.4 )) ;
     addCat( new Cat( "Chili", Cat::MALE, Cat::SHORTHAIR, 1.5 )) ;
-    //deleteCat( Cat( "Kali", Cat::FEMALE, Cat::SHORTHAIR, 1.3 ) );
+    //printAllCats();
+    Cat* Kali = findCatByName("Kali");
+    deleteCat( Kali );
     printAllCats();
 
 
