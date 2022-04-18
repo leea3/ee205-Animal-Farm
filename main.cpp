@@ -15,6 +15,7 @@
 #include "addCats.h"
 #include "Cat.h"
 #include "catDatabase.h"
+#include "Gender.h"
 #include "reportCats.h"
 #include "deleteCats.h"
 #include "config.h"
