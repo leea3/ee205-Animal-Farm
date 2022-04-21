@@ -19,6 +19,7 @@ protected:
 public: //methods
     //returns whether the linked list is empty or not
     bool empty() const noexcept;
+    //returns number of nodes in linked list
     unsigned int size() const noexcept;
     bool isIn( Node *aNode) const;
     bool isSorted() const noexcept;

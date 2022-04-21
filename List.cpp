@@ -17,7 +17,10 @@ bool List::empty() const noexcept {
         return false;
 }
 
-unsigned int List::size() const noexcept {}
+unsigned int List::size() const noexcept {
+    return count;
+}
+
 bool List::isIn(Node *aNode) const {}
 bool List::isSorted() const noexcept {}
 Node* List::get_first() const noexcept {}
