@@ -32,8 +32,12 @@ bool List::isIn(Node *aNode) const {
     return false;
 }
 
-bool List::isSorted() const noexcept {}
-Node* List::get_first() const noexcept {}
+bool List::isSorted() const noexcept {
+}
+
+Node* List::get_first() const noexcept {
+    return head;
+}
 void List::deleteAllNodes() noexcept {}
 Node* List::pop_front() noexcept {}
 void List::dump() const noexcept {}
