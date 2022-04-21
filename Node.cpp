@@ -9,3 +9,25 @@
 /// @date   21_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 #include "Node.h"
+#include "config.h"
+
+void Node::dump() const {
+    PRINT_HEADING_FOR_DUMP;
+    FORMAT_LINE_FOR_DUMP( "Node", "this" );
+    FORMAT_LINE_FOR_DUMP( "Node" , "next" );
+}
+
+bool Node::validate() const noexcept {
+
+}
+
+bool Node::operator>(const Node &rightSide) {
+
+}
+
+bool Node::compareByAddress(const Node *node1, const Node *node2) {
+    if( node1 > node2 )
+        return true;
+    else
+        return false;
+}
