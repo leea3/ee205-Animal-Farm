@@ -15,6 +15,25 @@
 
 
 void SinglyLinkedList::push_front(Node *newNode) {
+    assert( validate() );
+
+    if( newNode != nullptr )
+        throw std::invalid_argument( PROGRAM_NAME ": push_front failed as newNode is null.");
+
+    if( newNode->validate() == false )
+        throw std::domain_error( PROGRAM_NAME ": push_front failed as newNode is invalid.");
+
+    if( isIn( newNode ) == true )
+        throw std::logic_error( PROGRAM_NAME ": push_front failed as newNode is already in the container.");
+
+    if( head == nullptr ){
+        newNode->next = nullptr;
+        head = newNode;
+    } else {
+        newNode->next = head;
+        head = newNode;
+    }
+    assert( validate() );
 
 }
 
@@ -27,7 +46,7 @@ Node* SinglyLinkedList::pop_front() noexcept {
     if( head == nullptr )
         return nullptr; //list is empty
 
-    Node *tempNode = head;
+    //Node *tempNode = head;
     head = head->next;
     count--;
 
