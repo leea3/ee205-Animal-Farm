@@ -9,6 +9,7 @@
 /// @date   21_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 #include "List.h"
+#include "config.h"
 
 bool List::empty() const noexcept {
     if( head == nullptr )
@@ -38,9 +39,29 @@ bool List::isSorted() const noexcept {
 Node* List::get_first() const noexcept {
     return head;
 }
-void List::deleteAllNodes() noexcept {}
-Node* List::pop_front() noexcept {}
-void List::dump() const noexcept {}
+
+void List::deleteAllNodes() noexcept {
+
+}
+
+Node* List::pop_front() noexcept {
+    //@todo add validation
+    if( head == nullptr )
+        return nullptr; //list is empty
+
+    Node *tempNode = head;
+    head = head->next;
+    count--;
+
+    delete tempNode;
+
+    //@todo add validation
+
+    return head;
+}
+void List::dump() const noexcept {
+
+}
 bool List::validate() const noexcept {}
 Node* List::get_next(const Node *currentNode) {}
 
