@@ -12,6 +12,7 @@
 
 class Node {
     friend class List;
+    friend class SinglyLinkedList;
 protected:
     Node* next;
 

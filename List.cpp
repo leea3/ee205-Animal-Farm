@@ -46,28 +46,6 @@ void List::deleteAllNodes() noexcept {
         pop_front();
 }
 
-Node* List::pop_front() noexcept {
-    //@todo add validation
-    if( head == nullptr )
-        return nullptr; //list is empty
-
-    Node *tempNode = head;
-    head = head->next;
-    count--;
-
-    delete tempNode;
-
-    //@todo add validation
-
-    return head;
-}
-void List::dump() const noexcept {
-    FORMAT_LINE_FOR_DUMP("List", "Head");
-    for (Node *currentNode = head; currentNode != nullptr; currentNode = currentNode->next) {
-        currentNode->dump();
-    }
-}
-
 bool List::validate() const noexcept {
 
 }
