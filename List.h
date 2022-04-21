@@ -17,6 +17,7 @@ protected:
     unsigned int count;
 
 public: //methods
+    //returns whether the linked list is empty or not
     bool empty() const noexcept;
     unsigned int size() const noexcept;
     bool isIn( Node *aNode) const;

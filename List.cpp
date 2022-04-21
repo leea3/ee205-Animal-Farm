@@ -10,7 +10,13 @@
 ///////////////////////////////////////////////////////////////////////////////
 #include "List.h"
 
-bool List::empty() const noexcept {}
+bool List::empty() const noexcept {
+    if( head == nullptr )
+        return true;
+    else
+        return false;
+}
+
 unsigned int List::size() const noexcept {}
 bool List::isIn(Node *aNode) const {}
 bool List::isSorted() const noexcept {}
