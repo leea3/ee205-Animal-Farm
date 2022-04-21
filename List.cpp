@@ -60,8 +60,12 @@ Node* List::pop_front() noexcept {
     return head;
 }
 void List::dump() const noexcept {
-
+    FORMAT_LINE_FOR_DUMP("List", "Head");
+    for (Node *currentNode = head; currentNode != nullptr; currentNode = currentNode->next) {
+        currentNode->dump();
+    }
 }
+
 bool List::validate() const noexcept {}
 Node* List::get_next(const Node *currentNode) {}
 
