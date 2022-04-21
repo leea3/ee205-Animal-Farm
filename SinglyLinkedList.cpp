@@ -11,9 +11,19 @@
 #include "SinglyLinkedList.h"
 #include "config.h"
 #include "List.h"
+#include<cassert>
+
+
+void SinglyLinkedList::push_front(Node *newNode) {
+
+}
+
+void SinglyLinkedList::insert_after(Node *currentNode, Node *newNode) {
+
+}
 
 Node* SinglyLinkedList::pop_front() noexcept {
-    //@todo add validation
+    assert( validate() );
     if( head == nullptr )
         return nullptr; //list is empty
 
@@ -23,7 +33,7 @@ Node* SinglyLinkedList::pop_front() noexcept {
 
     //delete tempNode;
 
-    //@todo add validation
+    assert( validate() );
 
     return head;
 }
@@ -34,6 +44,7 @@ void SinglyLinkedList::dump() const noexcept {
         currentNode->dump();
     }
 }
+
 
 bool SinglyLinkedList::validate() const noexcept {
     //check for inconsistencies if the linked list is empty/not empty
