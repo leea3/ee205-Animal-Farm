@@ -11,6 +11,7 @@
 #pragma once
 
 class Node {
+    friend class List;
 protected:
     Node* next;
 

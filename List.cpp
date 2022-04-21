@@ -21,7 +21,17 @@ unsigned int List::size() const noexcept {
     return count;
 }
 
-bool List::isIn(Node *aNode) const {}
+bool List::isIn(Node *aNode) const {
+    Node *currentNode = head;
+
+    while ( currentNode != nullptr ) {
+        if ( currentNode == aNode )
+            return true;
+        currentNode = currentNode->next;
+    }
+    return false;
+}
+
 bool List::isSorted() const noexcept {}
 Node* List::get_first() const noexcept {}
 void List::deleteAllNodes() noexcept {}
