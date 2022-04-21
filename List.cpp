@@ -41,7 +41,9 @@ Node* List::get_first() const noexcept {
 }
 
 void List::deleteAllNodes() noexcept {
-
+    //@todo add validation
+    while( head != nullptr )
+        pop_front();
 }
 
 Node* List::pop_front() noexcept {
