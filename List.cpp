@@ -66,6 +66,14 @@ void List::dump() const noexcept {
     }
 }
 
-bool List::validate() const noexcept {}
-Node* List::get_next(const Node *currentNode) {}
+bool List::validate() const noexcept {
+
+}
+
+Node* List::get_next(const Node *currentNode) {
+    if( currentNode == nullptr )
+        throw std::invalid_argument( PROGRAM_NAME "currentNode is null");
+    else
+        return currentNode->next;
+}
 
