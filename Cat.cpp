@@ -17,12 +17,13 @@
 #include "Cat.h"
 #include "reportCats.h"
 
+/*
 #define FORMAT_LINE( className, member ) cout << setw(8) << (className) << setw(20) << (member) << setw(52)
 
 using namespace std;
 
 Cat::Cat() {
-    memset( name , 0 , CATNAME_CHARLIMIT );
+    //memset( name , 0 , CATNAME_CHARLIMIT );
     gender     = UNKNOWN_GENDER;
     breed      = UNKNOWN_BREED;
     isFixed    = false;
@@ -30,9 +31,9 @@ Cat::Cat() {
     next       = nullptr;
 }
 
-Cat::Cat(const char* newName,
+Cat::Cat(const std::string newName,
          const Cat::Gender newGender,
-         const Cat::Breed newBreed,
+         const Cat::Breed  newBreed,
          const Cat::Weight newWeight) : Cat() {
 
             //set default values to new cats
@@ -45,7 +46,7 @@ Cat::Cat(const char* newName,
     }
 
 Cat::~Cat(){
-    memset( name , 0 , CATNAME_CHARLIMIT );
+    //memset( name , 0 , CATNAME_CHARLIMIT );
     gender     = UNKNOWN_GENDER;
     breed      = UNKNOWN_BREED;
     isFixed    = false;
@@ -110,10 +111,9 @@ bool Cat::validateWeight( const Weight newWeight ) {
     return NOERROR;
 }
 
-void Cat::setName(const char* newName) {
+void Cat::setName(const std::string newName) {
     validateName( newName );
-    memset( name , 0 , CATNAME_CHARLIMIT );
-    strcpy(Cat::name, newName);
+    name = newName;
 }
 
 void Cat::setGender(const Gender newGender) {
@@ -141,7 +141,7 @@ void Cat::setWeight(const Weight newWeight) {
     Cat::weight = newWeight;
 }
 
-const char* Cat::getName() const {
+std::string Cat::getName() const {
     return Cat::name;
 }
 
@@ -160,3 +160,4 @@ bool Cat::getFixed() const {
 Cat::Weight Cat::getWeight() const {
     return Cat::weight;
 }
+*/

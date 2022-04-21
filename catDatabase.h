@@ -12,7 +12,7 @@
 #pragma once
 #include "config.h"
 #include "Cat.h"
-
+/*
 #define CATNAME_CHARLIMIT (50)
 
 //linked list head pointer
@@ -23,3 +23,5 @@ extern bool validateDatabase();
 
 //Note: Current number of cats in database held as a global variable
 extern Cat::NumCats numberOfCats;
+
+*/

@@ -16,6 +16,7 @@
 #include "catDatabase.h"
 #include "config.h"
 
+/*
 using namespace std;
 
 void printAllCats(){
@@ -61,3 +62,4 @@ const char* breedToString ( const enum Cat::Breed convertBreed ) {
         default:                 throw invalid_argument( PROGRAM_NAME ": Invalid Breed" );
     }
 }
+*/

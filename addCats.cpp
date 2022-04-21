@@ -13,6 +13,7 @@
 #include "addCats.h"
 #include "config.h"
 #include "catDatabase.h"
+/*
 
 void addCat( Cat* newCat ){
 
@@ -25,3 +26,4 @@ void addCat( Cat* newCat ){
     assert( validateDatabase() == NOERROR );
 
 }
+ */

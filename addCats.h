@@ -12,6 +12,7 @@
 #pragma once
 #include "Cat.h"
 
-
+/*
 // adds a cat to the front of a singly linked list
 extern void addCat( Cat* newCat );
+*/

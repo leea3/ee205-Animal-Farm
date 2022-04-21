@@ -12,7 +12,7 @@
 #include <stdexcept>
 #include <iostream>
 #include "deleteCats.h"
-
+/*
 using namespace std;
 
 void deleteCat( Cat* targetCat ){
@@ -67,3 +67,4 @@ void deleteAllCats( ) {
 
 
 }
+*/

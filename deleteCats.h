@@ -13,9 +13,10 @@
 #include "catDatabase.h"
 #include "Cat.h"
 
-
+/*
 //deletes a node from the linked list
 extern void deleteCat( Cat* targetCat );
 
 //deallocates memory and sets head pointer to null
 extern void deleteAllCats( );
+*/

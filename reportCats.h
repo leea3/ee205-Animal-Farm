@@ -11,7 +11,7 @@
 
 #pragma once
 #include "Cat.h"
-
+/*
 // Prints the contents of the entire database
 extern void printAllCats( );
 
@@ -24,3 +24,4 @@ extern const char* genderToString ( const enum Cat::Gender convertGender );
 // maps breed enum to a string
 extern const char* breedToString ( const enum Cat::Breed convertBreed );
 
+*/

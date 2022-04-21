@@ -13,6 +13,7 @@
 #include "catDatabase.h"
 #include "Cat.h"
 
+/*
 Cat* catDatabaseHeadPointer = nullptr;
 Cat::NumCats numberOfCats;
 
@@ -24,3 +25,4 @@ bool validateDatabase(){
     }
     return NOERROR;
 }
+ */
