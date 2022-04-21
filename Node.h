@@ -1,0 +1,16 @@
+///////////////////////////////////////////////////////////////////////////////
+///         University of Hawaii, College of Engineering
+/// @brief  ee205_animal_farm - EE 205 - Spr 2022
+///
+/// @file Node.h
+/// @version 1.0
+///
+/// @author Arthur Lee <leea3@hawaii.edu>
+/// @date   21_Apr_2022
+///////////////////////////////////////////////////////////////////////////////
+#pragma once
+
+class Node {
+
+};
+
