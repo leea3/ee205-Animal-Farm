@@ -8,9 +8,11 @@
 /// @author Arthur Lee <leea3@hawaii.edu>
 /// @date   22_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
-
+#include<algorithm>
+#include<cassert>
 #include "Animal.h"
 #include "config.h"
+#include "Node.h"
 
 const std::string KINGDOM_NAME = "Animalia";
 
@@ -66,18 +68,29 @@ void Animal::dump() const noexcept {
     FORMAT_LINE_FOR_DUMP( "Animal" , "Weight" );
 }
 
-/*
+
 bool Animal::validate() const noexcept {
-    return false;
+    //@todo add more validation
+    assert( validateClassification( getClassification() ) );
+    assert( validateSpecies( getSpecies() ) );
 }
- */
 
 bool Animal::validateClassification(const std::string &checkClassification) noexcept {
-    return false;
+    if ( checkClassification.empty() == true )
+        return false;
+    //check if there's any digits
+    if ( std::any_of(checkClassification.begin(), checkClassification.end(), ::isdigit ) == true )
+        return false;
+    return true;
 }
 
 bool Animal::validateSpecies(const std::string &checkSpecies) noexcept {
-    return false;
+    if ( checkSpecies.empty() == true )
+        return false;
+    //check if there's any digits
+    if ( std::any_of(checkSpecies.begin(), checkSpecies.end(), ::isdigit ) == true )
+        return false;
+    return true;
 }
 
 

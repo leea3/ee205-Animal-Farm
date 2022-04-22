@@ -11,6 +11,7 @@
 #include<string>
 #include"Weight.h"
 #include"Gender.h"
+#include"Node.h"
 
 #pragma once
 
@@ -48,8 +49,11 @@ protected: //setters
 
 public: // methods
     virtual std::string speak() const noexcept;
-    void dump() const noexcept override;
-    //bool validate() const noexcept override;
+    //@todo override
+    void dump() const noexcept;
+
+    //@todo override
+    bool validate() const noexcept;
     static bool validateClassification( const std::string &checkClassification) noexcept;
     static bool validateSpecies( const std::string &checkSpecies ) noexcept;
 
