@@ -13,6 +13,7 @@
 #include "List.h"
 #include<cassert>
 
+SinglyLinkedList::SinglyLinkedList() = default;
 
 void SinglyLinkedList::push_front(Node *newNode) {
     assert( validate() );
