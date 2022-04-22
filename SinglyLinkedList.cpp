@@ -19,10 +19,8 @@ void SinglyLinkedList::push_front(Node *newNode) {
 
     if( newNode != nullptr )
         throw std::invalid_argument( PROGRAM_NAME ": push_front failed as newNode is null.");
-
     if( newNode->validate() == false )
         throw std::domain_error( PROGRAM_NAME ": push_front failed as newNode is invalid.");
-
     if( isIn( newNode ) == true )
         throw std::logic_error( PROGRAM_NAME ": push_front failed as newNode is already in the container.");
 
@@ -38,7 +36,26 @@ void SinglyLinkedList::push_front(Node *newNode) {
 }
 
 void SinglyLinkedList::insert_after(Node *currentNode, Node *newNode) {
+    assert( validate() );
 
+    //series of validation checks
+    if( List::empty() == true )
+        throw std::logic_error(PROGRAM_NAME ": insert_after failed as list is empty.");
+    if( currentNode == nullptr )
+        throw std::invalid_argument( PROGRAM_NAME ": insert_after failed as currentNode is null.");
+    if( newNode == nullptr )
+        throw std::invalid_argument( PROGRAM_NAME ": insert_after failed as newNode is null.");
+    if( List::isIn(currentNode) == false )
+        throw std::logic_error( PROGRAM_NAME ": insert_after failed as currentNode is not in the list");
+    if( newNode -> validate() == false )
+        throw std::domain_error( PROGRAM_NAME ": insert_after failed as newNode is not valid.");
+    if( List::isIn( newNode ) == true )
+        throw std::logic_error( PROGRAM_NAME ": insert_after failed as newNode is already in the list.");
+
+    newNode->next = currentNode->next;
+    currentNode->next = newNode;
+
+    assert( validate() );
 }
 
 Node* SinglyLinkedList::pop_front() noexcept {
