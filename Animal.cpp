@@ -10,6 +10,9 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "Animal.h"
+#include "config.h"
+
+const std::string KINGDOM_NAME = "Animalia";
 
 Animal::Animal(const float newMaxWeight, const std::string &newClassification, const std::string &newSpecies) {
 
@@ -52,11 +55,18 @@ std::string Animal::speak() const noexcept {
     return std::string();
 }
 
-/*
-void Animal::dump() const noexcept {
 
+void Animal::dump() const noexcept {
+    PRINT_HEADING_FOR_DUMP;
+    FORMAT_LINE_FOR_DUMP( "Animal", "this" );
+    FORMAT_LINE_FOR_DUMP( "Animal" , "Kingdom" );
+    FORMAT_LINE_FOR_DUMP( "Animal" , "Classification" );
+    FORMAT_LINE_FOR_DUMP( "Animal" , "Species" );
+    FORMAT_LINE_FOR_DUMP( "Animal" , "Gender" );
+    FORMAT_LINE_FOR_DUMP( "Animal" , "Weight" );
 }
 
+/*
 bool Animal::validate() const noexcept {
     return false;
 }

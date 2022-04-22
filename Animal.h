@@ -48,7 +48,7 @@ protected: //setters
 
 public: // methods
     virtual std::string speak() const noexcept;
-    //void dump() const noexcept override;
+    void dump() const noexcept override;
     //bool validate() const noexcept override;
     static bool validateClassification( const std::string &checkClassification) noexcept;
     static bool validateSpecies( const std::string &checkSpecies ) noexcept;
