@@ -47,6 +47,9 @@ Weight &Animal::getWeight() const noexcept {
 
 void Animal::setWeight(const float newWeight) {
 
+    assert( Weight::validateWeight( newWeight ) );
+    weight.Weight::setWeight( newWeight );
+
 }
 
 void Animal::setGender(const Gender newGender) {
