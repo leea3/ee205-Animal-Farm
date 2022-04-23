@@ -38,7 +38,7 @@ std::string Animal::getSpecies() const noexcept {
 }
 
 Gender Animal::getGender() const noexcept {
-    return Gender::UNKNOWN_GENDER;
+    return gender;
 }
 
 Weight Animal::getWeight() const noexcept {
