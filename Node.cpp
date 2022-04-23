@@ -22,8 +22,9 @@ bool Node::validate() const noexcept {
 }
 
 bool Node::operator>(const Node &rightSide) {
-
+    return (this > &rightSide);
 }
+
 
 bool Node::compareByAddress(const Node *node1, const Node *node2) {
     if( node1 > node2 )
