@@ -41,8 +41,8 @@ Gender Animal::getGender() const noexcept {
     return Gender::UNKNOWN_GENDER;
 }
 
-Weight &Animal::getWeight() const noexcept {
-    return (Weight &) Weight::UNKNOWN_WEIGHT;
+Weight Animal::getWeight() const noexcept {
+    return weight.Weight::getWeight();
 }
 
 void Animal::setWeight(const float newWeight) {

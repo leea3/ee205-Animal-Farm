@@ -39,7 +39,7 @@ public: //getters
     std::string getClassification() const noexcept;
     std::string getSpecies() const noexcept;
     Gender getGender() const noexcept;
-    Weight &getWeight() const noexcept;
+    Weight getWeight() const noexcept;
 
 public: //setters
     void setWeight( const float newWeight );
