@@ -14,7 +14,7 @@
 #include "config.h"
 #include "Node.h"
 
-const std::string KINGDOM_NAME = "Animalia";
+const std::string Animal::KINGDOM_NAME = "Animalia";
 
 Animal::Animal(const float newMaxWeight, const std::string &newClassification, const std::string &newSpecies) {
 
@@ -26,15 +26,17 @@ Animal::Animal(const Gender newGender, const float newWeight, const float newMax
 }
 
 std::string Animal::getKingdom() const noexcept {
-    return std::string();
+    return KINGDOM_NAME;
 }
 
 std::string Animal::getClassification() const noexcept {
-    return std::string();
+    assert( validateClassification( classification ) );
+    return classification;
 }
 
 std::string Animal::getSpecies() const noexcept {
-    return std::string();
+    assert( validateClassification( species ) );
+    return species;
 }
 
 Gender Animal::getGender() const noexcept {
