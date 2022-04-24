@@ -48,7 +48,7 @@ protected: //setters
     void setGender( const Gender newGender );
 
 public: // methods
-    virtual std::string speak() const noexcept;
+    virtual std::string speak() const noexcept = 0;
     void dump() const noexcept override;
 
     bool validate() const noexcept override;

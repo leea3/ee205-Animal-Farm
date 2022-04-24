@@ -20,17 +20,28 @@
 const std::string Cat::SPECIES_NAME = "Felis Catus";
 const float       Cat::MAX_WEIGHT   = 40.0;
 
-/*
 Cat::Cat( const std::string &newName )
-: Mammal::Mammal( Cat::MAX_WEIGHT , Cat::SPECIES_NAME ){
-    validate();
+: Mammal::Mammal( Cat::MAX_WEIGHT , Cat::SPECIES_NAME ) {
+    if( validateName( newName ) == false )
+        throw std::invalid_argument( PROGRAM_NAME ": Cat constructor failed as newName is invalid.");
     setName( newName );
+    isCatFixed = false;
+    Cat::validate();
 }
-*/
+
 void Cat::setName ( const std::string newName ){
     if ( validateName( newName ) == false )
         throw std::invalid_argument( PROGRAM_NAME ": setName failed as name is invalid.");
     name = newName;
+}
+
+std::string Cat::speak() const noexcept{
+    return "Meow~";
+}
+
+void Cat::dump() const noexcept {
+    Mammal::dump();
+    FORMAT_LINE_FOR_DUMP( "Cat" , "Name" ) << name << std::endl;
 }
 
 bool Cat::validate() const noexcept {
@@ -43,6 +54,7 @@ bool Cat::validateName(const std::string &newName) {
         return false;
     return true;
 }
+
 
 /*
 #define FORMAT_LINE( className, member ) cout << setw(8) << (className) << setw(20) << (member) << setw(52)
