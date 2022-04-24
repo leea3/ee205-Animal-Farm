@@ -19,7 +19,9 @@
 
 const std::string Animal::KINGDOM_NAME = "Animalia";
 
-Animal::Animal(const float newMaxWeight, const std::string &newClassification, const std::string &newSpecies) : weight( Weight::POUND , newMaxWeight ) {
+Animal::Animal( const float newMaxWeight ,
+                const std::string &newClassification ,
+                const std::string &newSpecies ) : weight( Weight::POUND , newMaxWeight ) {
     if( validateClassification( newClassification ) == false )
         throw std::invalid_argument( PROGRAM_NAME ": Animal constructor failed as classification is invalid.");
     if( validateSpecies( newSpecies ) == false )
@@ -31,8 +33,22 @@ Animal::Animal(const float newMaxWeight, const std::string &newClassification, c
 
 }
 
-Animal::Animal(const Gender newGender, const float newWeight, const float newMaxWeight,
-               const std::string &newClassification, const std::string &newSpecies) {
+Animal::Animal( const Gender newGender ,
+                const float newWeight ,
+                const float newMaxWeight ,
+                const std::string &newClassification ,
+                const std::string &newSpecies ) :
+                weight( newWeight , newMaxWeight ) {
+
+    if( validateClassification( newClassification ) == false )
+        throw std::invalid_argument( PROGRAM_NAME ": Animal constructor failed as classification is invalid.");
+    if( validateSpecies( newSpecies ) == false )
+        throw std::invalid_argument( PROGRAM_NAME ": Animal constructor failed as species is invalid.");
+
+    gender = newGender;
+    classification = newClassification;
+    species = newSpecies;
+    validate();
 
 }
 
@@ -77,13 +93,18 @@ std::string Animal::speak() const noexcept {
 }
 
 std::ostream& operator<<( std::ostream& lhs_stream, const Weight& rhs_weight ){
+    std::stringstream stringBuffer;
     if( rhs_weight == Weight::UNKNOWN_WEIGHT )
         return lhs_stream << "Unknown Weight";
-    return lhs_stream << rhs_weight.Weight::getWeight();
+    stringBuffer << rhs_weight.Weight::getWeight()
+                 << " out of "
+                 << rhs_weight.Weight::getMaxWeight()
+                 << " "
+                 << rhs_weight.Weight::getUnitOfWeight();
+    return lhs_stream << stringBuffer.str();
 }
 
 void Animal::dump() const noexcept {
-    PRINT_HEADING_FOR_DUMP;
     Node::dump();
     FORMAT_LINE_FOR_DUMP( "Animal", "this" ) << this << std::endl;
     FORMAT_LINE_FOR_DUMP( "Animal" , "Kingdom" ) << KINGDOM_NAME << std::endl;

@@ -101,6 +101,7 @@ float Weight::convertWeight(float fromWeight, UnitOfWeight fromUnit, UnitOfWeigh
     assert( 0 ); // we should never get here
 }
 
+/*
 std::ostream& operator<<( ostream& lhs_stream
         ,const Weight::UnitOfWeight rhs_UnitOfWeight ) {
     switch( rhs_UnitOfWeight ) {
@@ -111,6 +112,7 @@ std::ostream& operator<<( ostream& lhs_stream
             throw out_of_range( "The unit can’t be mapped to a string" );
     }
 }
+ */
 
 bool Weight::operator==( const Weight& rhs_Weight ) const {
     float lhs_weight = (bIsKnown) ? getWeight(Weight::KILO) : 0;
