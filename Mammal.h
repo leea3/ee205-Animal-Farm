@@ -33,6 +33,14 @@ public: //constructors
             const float newMaxWeight,
             const std::string&newSpecies );
 
+public: //getters
+    Color getColor() const noexcept;
+
+public: //setters
+    void setColor(Color color) noexcept;
+
+public: //methods
+    void dump() const noexcept override;
 
 
 };
