@@ -32,6 +32,7 @@ public: //enums and typedefs
 
 protected: //Protected member variables
     std::string   name ;
+    Breed       breed;
     bool          isCatFixed;
 
 public: //public constructors & destructors
@@ -48,16 +49,17 @@ public: //public constructors & destructors
 public: //getters and setters
     void setName   ( const std::string  newName   );
     void setBreed  ( const Breed        breed  );
-    void fixCat    (                           );
+    void fixCat    (                           ) ;
 
     std::string       getName()    const noexcept;
-    Breed             getBreed()   const;
+    std::string       getBreed()   const noexcept;
     bool              getFixed()   const noexcept;
 
 public: //public methods
     std::string speak() const noexcept override;
     void dump()    const noexcept override; //prints a cat's name and its characteristics
     bool validate() const noexcept override; //series of validation checks on name, weight
+    static std::string breedToString ( Cat::Breed convertBreed ) noexcept;
 
 public: //validation methods
     static bool validateName  ( const std::string &newName   );

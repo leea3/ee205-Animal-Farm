@@ -29,10 +29,32 @@ Cat::Cat( const std::string &newName )
     Cat::validate();
 }
 
+std::string Cat::getName() const noexcept{
+    validate();
+    return name;
+}
+
+bool Cat::getFixed() const noexcept {
+    validate();
+    return isCatFixed;
+}
+
+std::string Cat::getBreed() const noexcept {
+    validate();
+    return breedToString( breed );
+
+}
+
 void Cat::setName ( const std::string newName ){
     if ( validateName( newName ) == false )
         throw std::invalid_argument( PROGRAM_NAME ": setName failed as name is invalid.");
     name = newName;
+}
+
+void Cat::fixCat() {
+    if( isCatFixed == true )
+        throw std::logic_error(PROGRAM_NAME ": fixCat() failed as cat is already fixed (can't unfix a cat).");
+    isCatFixed = true;
 }
 
 std::string Cat::speak() const noexcept{
@@ -55,6 +77,17 @@ bool Cat::validateName(const std::string &newName) {
     return true;
 }
 
+std::string Cat::breedToString ( Cat::Breed convertBreed ) noexcept {
+    switch( convertBreed ){
+        case Cat::UNKNOWN_BREED: return "UNKNOWN BREED";
+        case Cat::MAINE_COON:    return "MAINE COON";
+        case Cat::MANX:          return "MANX";
+        case Cat::SHORTHAIR:     return "SHORTHAIR";
+        case Cat::PERSIAN:       return "PERSIAN";
+        case Cat::SPHYNX:        return "SPHYNX";
+        default:                 throw  std::invalid_argument( PROGRAM_NAME ": Invalid Breed" );
+    }
+}
 
 /*
 #define FORMAT_LINE( className, member ) cout << setw(8) << (className) << setw(20) << (member) << setw(52)
