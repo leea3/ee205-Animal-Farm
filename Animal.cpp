@@ -16,7 +16,15 @@
 
 const std::string Animal::KINGDOM_NAME = "Animalia";
 
-Animal::Animal(const float newMaxWeight, const std::string &newClassification, const std::string &newSpecies) {
+Animal::Animal(const float newMaxWeight, const std::string &newClassification, const std::string &newSpecies) : weight( Weight::POUND , newMaxWeight ) {
+    if( validateClassification( newClassification ) == false )
+        throw std::invalid_argument( PROGRAM_NAME ": Animal constructor failed as classification is invalid.");
+    if( validateSpecies( newSpecies ) == false )
+        throw std::invalid_argument( PROGRAM_NAME ": Animal constructor failed as species is invalid.");
+
+    classification = newClassification;
+    species = newSpecies;
+    validate();
 
 }
 
