@@ -55,7 +55,10 @@ void Animal::setWeight(const float newWeight) {
 }
 
 void Animal::setGender(const Gender newGender) {
+    if( gender != Gender::UNKNOWN_GENDER )
+        throw std::logic_error( PROGRAM_NAME ": setGender failed as you cannot change an Animal's gender.");
 
+    gender = newGender;
 }
 
 std::string Animal::speak() const noexcept {
@@ -78,6 +81,7 @@ bool Animal::validate() const noexcept {
     //@todo add more validation
     assert( validateClassification( getClassification() ) );
     assert( validateSpecies( getSpecies() ) );
+    weight.Weight::validate();
 }
 
 bool Animal::validateClassification(const std::string &checkClassification) noexcept {
