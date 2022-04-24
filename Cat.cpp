@@ -29,6 +29,19 @@ Cat::Cat( const std::string &newName )
     Cat::validate();
 }
 
+Cat::Cat( const std::string newName,
+     const Color       newColor,
+     const bool        newIsFixed,
+     const Gender      newGender,
+     const float       newWeight )
+     : Mammal( newColor , newGender , newWeight , Cat::MAX_WEIGHT , Cat::SPECIES_NAME ){
+    if( validateName( newName ) == false )
+        throw std::invalid_argument( PROGRAM_NAME ": Cat constructor failed as newName is invalid.");
+    setName( newName );
+    isCatFixed = newIsFixed;
+    Cat::validate();
+}
+
 std::string Cat::getName() const noexcept{
     validate();
     return name;
@@ -42,7 +55,6 @@ bool Cat::getFixed() const noexcept {
 std::string Cat::getBreed() const noexcept {
     validate();
     return breedToString( breed );
-
 }
 
 void Cat::setName ( const std::string newName ){
