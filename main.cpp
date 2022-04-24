@@ -28,12 +28,12 @@ int main() {
 
     catDB.push_front( new Cat( "Loki",  Color::WHITE,  true, Gender::MALE,   1.0 ) ) ;
     catDB.push_front( new Cat( "Milo",  Color::BLACK,  true, Gender::MALE,   1.1 ) ) ;
-    catDB.push_front( new Cat( "Bella", Color::GREEN,  true, Gender::FEMALE, 1.2 ) ) ;
-    catDB.push_front( new Cat( "Kali",  Color::PINK,   true, Gender::FEMALE, 1.3 ) ) ;
-    catDB.push_front( new Cat( "Trin",  Color::WHITE,  true, Gender::FEMALE, 1.4 ) ) ;
+    catDB.push_front( new Cat( "Bella", Color::GINGER,  true, Gender::FEMALE, 1.2 ) ) ;
+    catDB.push_front( new Cat( "Kali",  Color::CINNAMON,   true, Gender::FEMALE, 1.3 ) ) ;
+    catDB.push_front( new Cat( "Trin",  Color::FAWN,  true, Gender::FEMALE, 1.4 ) ) ;
 
 
-    catDB.insert_after(catDB.get_first(), new Cat( "Chili", Color::PINK, true, Gender::MALE,   1.5 ) );
+    catDB.insert_after(catDB.get_first(), new Cat( "Chili", Color::GREY, true, Gender::MALE,   1.5 ) );
 
 
     for( Animal* pAnimal = (Animal*)catDB.get_first() ; pAnimal != nullptr ; pAnimal = (Animal*)List::get_next( (Node*)pAnimal ) ) {
