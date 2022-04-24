@@ -45,7 +45,7 @@ Animal::Animal( const Gender newGender ,
     if( validateSpecies( newSpecies ) == false )
         throw std::invalid_argument( PROGRAM_NAME ": Animal constructor failed as species is invalid.");
 
-    gender = newGender;
+    setGender( newGender );
     classification = newClassification;
     species = newSpecies;
     validate();
