@@ -21,7 +21,7 @@
 class Cat : public Mammal{
 public: //enums and typedefs
     static const std::string SPECIES_NAME;
-    static const float MAX_WEIGHT;
+    static const Weight::t_weight MAX_WEIGHT;
 
     enum Breed { UNKNOWN_BREED = 0
         ,MAINE_COON            = 1
@@ -43,7 +43,7 @@ public: //public constructors & destructors
         const Color       newColor,
         const bool        newIsFixed,
         const Gender      newGender,
-        const float       newWeight );
+        const Weight::t_weight       newWeight );
 
 
 public: //getters and setters

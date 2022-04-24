@@ -17,7 +17,7 @@
 #include "Cat.h"
 
 const std::string Cat::SPECIES_NAME = "Felis Catus";
-const float       Cat::MAX_WEIGHT   = 40.0;
+const Weight::t_weight       Cat::MAX_WEIGHT   = 40.0;
 
 Cat::Cat( const std::string &newName )
 : Mammal::Mammal( Cat::MAX_WEIGHT , Cat::SPECIES_NAME ) {
@@ -32,7 +32,7 @@ Cat::Cat( const std::string newName,
      const Color       newColor,
      const bool        newIsFixed,
      const Gender      newGender,
-     const float       newWeight )
+     const Weight::t_weight       newWeight )
      : Mammal( newColor , newGender , newWeight , Cat::MAX_WEIGHT , Cat::SPECIES_NAME ){
     if( validateName( newName ) == false )
         throw std::invalid_argument( PROGRAM_NAME ": Cat constructor failed as newName is invalid.");
