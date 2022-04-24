@@ -8,6 +8,7 @@
 /// @author Arthur Lee <leea3@hawaii.edu>
 /// @date   21_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
+#include <cassert>
 #include "List.h"
 #include "config.h"
 
@@ -49,9 +50,10 @@ Node* List::get_first() const noexcept {
 }
 
 void List::deleteAllNodes() noexcept {
-    //@todo add validation
+    assert( validate() );
     while( head != nullptr )
         pop_front();
+    assert( validate() );
 }
 
 Node* List::get_next(const Node *currentNode) {
