@@ -10,11 +10,12 @@
 ///////////////////////////////////////////////////////////////////////////////
 #include "Node.h"
 #include "config.h"
+#include<iostream>
 
-void Node::dump() const {
+void Node::dump() const noexcept {
     PRINT_HEADING_FOR_DUMP;
-    FORMAT_LINE_FOR_DUMP( "Node", "this" );
-    FORMAT_LINE_FOR_DUMP( "Node" , "next" );
+    FORMAT_LINE_FOR_DUMP( "Node", "this" ) << std::endl;
+    FORMAT_LINE_FOR_DUMP( "Node" , "next" ) << std::endl;
 }
 
 bool Node::validate() const noexcept {

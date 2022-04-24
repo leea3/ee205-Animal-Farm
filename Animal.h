@@ -15,7 +15,7 @@
 
 #pragma once
 
-class Animal {
+class Animal : public Node {
 public:
     static const std::string KINGDOM_NAME;
 private:
@@ -50,13 +50,12 @@ protected: //setters
 public: // methods
     virtual std::string speak() const noexcept;
     //@todo override
-    void dump() const noexcept;
+    void dump() const noexcept override;
 
     //@todo override
     bool validate() const noexcept;
     static bool validateClassification( const std::string &checkClassification) noexcept;
     static bool validateSpecies( const std::string &checkSpecies ) noexcept;
-
 
 
 

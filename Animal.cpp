@@ -10,9 +10,12 @@
 ///////////////////////////////////////////////////////////////////////////////
 #include<algorithm>
 #include<cassert>
+#include<iostream>
+#include<string>
 #include "Animal.h"
 #include "config.h"
 #include "Node.h"
+#include "Gender.h"
 
 const std::string Animal::KINGDOM_NAME = "Animalia";
 
@@ -73,15 +76,21 @@ std::string Animal::speak() const noexcept {
     return std::string();
 }
 
+std::ostream& operator<<( std::ostream& lhs_stream, const Weight& rhs_weight ){
+    if( rhs_weight == Weight::UNKNOWN_WEIGHT )
+        return lhs_stream << "Unknown Weight";
+    return lhs_stream << rhs_weight.Weight::getWeight();
+}
 
 void Animal::dump() const noexcept {
     PRINT_HEADING_FOR_DUMP;
-    FORMAT_LINE_FOR_DUMP( "Animal", "this" );
-    FORMAT_LINE_FOR_DUMP( "Animal" , "Kingdom" );
-    FORMAT_LINE_FOR_DUMP( "Animal" , "Classification" );
-    FORMAT_LINE_FOR_DUMP( "Animal" , "Species" );
-    FORMAT_LINE_FOR_DUMP( "Animal" , "Gender" );
-    FORMAT_LINE_FOR_DUMP( "Animal" , "Weight" );
+    Node::dump();
+    FORMAT_LINE_FOR_DUMP( "Animal", "this" ) << this << std::endl;
+    FORMAT_LINE_FOR_DUMP( "Animal" , "Kingdom" ) << KINGDOM_NAME << std::endl;
+    FORMAT_LINE_FOR_DUMP( "Animal" , "Classification" ) << classification << std::endl;
+    FORMAT_LINE_FOR_DUMP( "Animal" , "Species" ) << species << std::endl;
+    FORMAT_LINE_FOR_DUMP( "Animal" , "Gender" ) << gender << std::endl;
+    FORMAT_LINE_FOR_DUMP( "Animal" , "Weight" ) << weight << std::endl;
 }
 
 
@@ -109,6 +118,7 @@ bool Animal::validateSpecies(const std::string &checkSpecies) noexcept {
         return false;
     return true;
 }
+
 
 
 

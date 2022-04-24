@@ -17,7 +17,7 @@ protected:
     Node* next;
 
 public:
-    virtual void dump() const;
+    virtual void dump() const noexcept;
     virtual bool validate() const noexcept;
     virtual bool operator> ( const Node &rightSide );
 
