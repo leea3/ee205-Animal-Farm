@@ -15,7 +15,6 @@
 #include <stdexcept>
 #include "config.h"
 #include "Cat.h"
-#include "reportCats.h"
 
 const std::string Cat::SPECIES_NAME = "Felis Catus";
 const float       Cat::MAX_WEIGHT   = 40.0;

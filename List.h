@@ -14,7 +14,7 @@
 class List {
 protected:
     Node* head;
-    unsigned int count;
+    unsigned int count = 0;
 
 public: //methods
     //returns whether the linked list is empty or not

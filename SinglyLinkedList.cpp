@@ -24,6 +24,7 @@ void SinglyLinkedList::push_front(Node *newNode) {
     if( isIn( newNode ) == true )
         throw std::logic_error( PROGRAM_NAME ": push_front failed as newNode is already in the container.");
 
+
     if( head == nullptr ){
         newNode->next = nullptr;
         head = newNode;
@@ -92,17 +93,6 @@ bool SinglyLinkedList::validate() const noexcept {
     if ( head != nullptr && (count == 0 || empty() == true ) )
         return false;
 
-    //tortoise and hare algorithm to detect infinite loops
-    Node* tortoise = head;
-    Node* hare = head;
-    while (tortoise->next != NULL && hare->next->next != NULL)
-    {
-        tortoise = tortoise->next;
-        hare = hare->next->next;
-        if (tortoise == hare) //executes if there's a loop
-            return false;
-    }
-
     //check if number of nodes in linked list is consistent with count
     unsigned int countNumberOfNodes = 0;
     Node* tempNode = head;
@@ -112,6 +102,22 @@ bool SinglyLinkedList::validate() const noexcept {
     }
     if ( count != countNumberOfNodes )
         return false;
+
+    //tortoise and hare algorithm to detect infinite loops
+    if (head == NULL || head->next == NULL)
+        return true;
+
+    Node* slow = head;
+    Node* fast = head;
+
+    slow = slow->next;
+    fast = fast->next->next;
+    while (fast && fast->next) {
+        if (slow == fast)
+            return false;
+        slow = slow->next;
+        fast = fast->next->next;
+    }
 
     return true;
 }

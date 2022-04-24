@@ -10,6 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 #include "Node.h"
 #include "config.h"
+#include "List.h"
 #include<iostream>
 
 void Node::dump() const noexcept {
@@ -18,8 +19,9 @@ void Node::dump() const noexcept {
     FORMAT_LINE_FOR_DUMP( "Node" , "next" ) << next << std::endl;
 }
 
-bool Node::validate() const noexcept {
 
+bool Node::validate() const noexcept {
+    return true;
 }
 
 bool Node::operator>(const Node &rightSide) {
