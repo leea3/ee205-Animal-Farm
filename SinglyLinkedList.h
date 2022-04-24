@@ -13,7 +13,7 @@
 #include "Node.h"
 #include "List.h"
 
-class SinglyLinkedList : List {
+class SinglyLinkedList : public List {
 public: //constructors
     SinglyLinkedList();
 

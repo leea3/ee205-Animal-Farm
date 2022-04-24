@@ -16,9 +16,8 @@
 SinglyLinkedList::SinglyLinkedList() = default;
 
 void SinglyLinkedList::push_front(Node *newNode) {
-    assert( validate() );
 
-    if( newNode != nullptr )
+    if( newNode == nullptr )
         throw std::invalid_argument( PROGRAM_NAME ": push_front failed as newNode is null.");
     if( newNode->validate() == false )
         throw std::domain_error( PROGRAM_NAME ": push_front failed as newNode is invalid.");
@@ -32,6 +31,7 @@ void SinglyLinkedList::push_front(Node *newNode) {
         newNode->next = head;
         head = newNode;
     }
+    count++;
     assert( validate() );
 
 }
@@ -56,6 +56,8 @@ void SinglyLinkedList::insert_after(Node *currentNode, Node *newNode) {
     newNode->next = currentNode->next;
     currentNode->next = newNode;
 
+    count++;
+
     assert( validate() );
 }
 
@@ -76,7 +78,7 @@ Node* SinglyLinkedList::pop_front() noexcept {
 }
 
 void SinglyLinkedList::dump() const noexcept {
-    FORMAT_LINE_FOR_DUMP("List", "Head");
+    std::cout << "SinglyLinkedList: head = [" << head << "]" << std::endl;
     for (Node *currentNode = head; currentNode != nullptr; currentNode = currentNode->next) {
         currentNode->dump();
     }

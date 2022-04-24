@@ -59,7 +59,7 @@ public: //public methods
     std::string speak() const noexcept override;
     void dump()    const noexcept override; //prints a cat's name and its characteristics
     bool validate() const noexcept override; //series of validation checks on name, weight
-    static std::string breedToString ( Cat::Breed convertBreed ) noexcept;
+    static std::string breedToString ( Cat::Breed convertBreed );
 
 public: //validation methods
     static bool validateName  ( const std::string &newName   );

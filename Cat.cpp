@@ -89,7 +89,7 @@ bool Cat::validateName(const std::string &newName) {
     return true;
 }
 
-std::string Cat::breedToString ( Cat::Breed convertBreed ) noexcept {
+std::string Cat::breedToString ( Cat::Breed convertBreed ) {
     switch( convertBreed ){
         case Cat::UNKNOWN_BREED: return "UNKNOWN BREED";
         case Cat::MAINE_COON:    return "MAINE COON";
