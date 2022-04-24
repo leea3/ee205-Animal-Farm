@@ -11,18 +11,17 @@
 #pragma once
 
 #include<string>
+#include"Gender.h"
+#include"Color.h"
+#include "Mammal.h"
 
-/*
+
 #define CATNAME_CHARLIMIT (50)
 
-class Cat {
+class Cat : public Mammal{
 public: //enums and typedefs
-    typedef float Weight;
-    typedef int   NumCats;
-
-    enum Gender { UNKNOWN_GENDER = 0
-        ,MALE                    = 1
-        ,FEMALE                  = 2 };
+    static const std::string SPECIES_NAME;
+    static const float MAX_WEIGHT;
 
     enum Breed { UNKNOWN_BREED = 0
         ,MAINE_COON            = 1
@@ -33,47 +32,34 @@ public: //enums and typedefs
 
 protected: //Protected member variables
     std::string   name ;
-    enum   Gender gender ;
-    enum   Breed  breed ;
-    bool          isFixed;
-    Weight        weight;
-
-public: //public member variables
-    Cat* next;
+    bool          isCatFixed;
 
 public: //public constructors & destructors
 
-    Cat();
+    Cat( const std::string &newName );
 
     Cat(const std::string newName,
+        const Color       newColor,
+        const bool        newIsFixed,
         const Gender      newGender,
-        const Breed       newBreed,
-        const Weight      newWeight);
+        const float       newWeight );
 
-    //destructor that sets default values to a cat
-    ~Cat();
 
 public: //getters and setters
     void setName   ( const std::string  name   );
-    void setGender ( const Gender       gender );
     void setBreed  ( const Breed        breed  );
     void fixCat    (                           );
-    void setWeight ( const Weight       weight );
 
-    std::string       getName()    const;
-    Gender            getGender()  const;
+    std::string       getName()    const noexcept;
     Breed             getBreed()   const;
-    bool              getFixed()   const;
-    Weight            getWeight()  const;
+    bool              getFixed()   const noexcept;
 
 public: //public methods
-    bool printCat()    const noexcept; //prints a cat's name and its characteristics
-    bool validateCat() const noexcept; //series of validation checks on name, weight
+    std::string speak() const noexcept override;
+    void dump()    const noexcept override; //prints a cat's name and its characteristics
+    bool validate() const noexcept override; //series of validation checks on name, weight
 
 public: //validation methods
     static bool validateName  ( const std::string newName   );
-    static bool validateGender( const Gender      newGender );
     static bool validateBreed ( const Breed       newBreed  );
-    static bool validateWeight( const Weight      newWeight );
 };
-*/
