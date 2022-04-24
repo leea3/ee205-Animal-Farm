@@ -116,7 +116,7 @@ void Animal::dump() const noexcept {
 
 
 bool Animal::validate() const noexcept {
-    //@todo add more validation
+    assert( Node::validate() );
     assert( validateClassification( getClassification() ) );
     assert( validateSpecies( getSpecies() ) );
     weight.Weight::validate();
