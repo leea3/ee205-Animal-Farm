@@ -27,8 +27,18 @@ Cat::Cat( const std::string &newName )
     setName( newName );
 }
 */
+void Cat::setName ( const std::string newName ){
+    if ( validateName( newName ) == false )
+        throw std::invalid_argument( PROGRAM_NAME ": setName failed as name is invalid.");
+    name = newName;
+}
 
-bool Cat::validateName(const std::string newName) {
+bool Cat::validate() const noexcept {
+    assert( validateName( name ) );
+    return true;
+}
+
+bool Cat::validateName(const std::string &newName) {
     if ( newName.empty() == true )
         return false;
     return true;

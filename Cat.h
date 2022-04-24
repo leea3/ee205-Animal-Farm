@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 #pragma once
 
-#include<string>
+#include<cstring>
 #include"Gender.h"
 #include"Color.h"
 #include "Mammal.h"
@@ -46,7 +46,7 @@ public: //public constructors & destructors
 
 
 public: //getters and setters
-    void setName   ( const std::string  name   );
+    void setName   ( const std::string  newName   );
     void setBreed  ( const Breed        breed  );
     void fixCat    (                           );
 
@@ -60,6 +60,6 @@ public: //public methods
     bool validate() const noexcept override; //series of validation checks on name, weight
 
 public: //validation methods
-    static bool validateName  ( const std::string newName   );
+    static bool validateName  ( const std::string &newName   );
     static bool validateBreed ( const Breed       newBreed  );
 };
