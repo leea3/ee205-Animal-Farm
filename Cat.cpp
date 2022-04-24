@@ -21,6 +21,20 @@ const std::string Cat::SPECIES_NAME = "Felis Catus";
 const float       Cat::MAX_WEIGHT   = 40.0;
 
 /*
+Cat::Cat( const std::string &newName )
+: Mammal::Mammal( Cat::MAX_WEIGHT , Cat::SPECIES_NAME ){
+    validate();
+    setName( newName );
+}
+*/
+
+bool Cat::validateName(const std::string newName) {
+    if ( newName.empty() == true )
+        return false;
+    return true;
+}
+
+/*
 #define FORMAT_LINE( className, member ) cout << setw(8) << (className) << setw(20) << (member) << setw(52)
 
 using namespace std;
