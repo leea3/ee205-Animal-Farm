@@ -14,8 +14,8 @@
 
 void Node::dump() const noexcept {
     PRINT_HEADING_FOR_DUMP;
-    FORMAT_LINE_FOR_DUMP( "Node", "this" ) << std::endl;
-    FORMAT_LINE_FOR_DUMP( "Node" , "next" ) << std::endl;
+    FORMAT_LINE_FOR_DUMP( "Node", "this" ) << this << std::endl;
+    FORMAT_LINE_FOR_DUMP( "Node" , "next" ) << next << std::endl;
 }
 
 bool Node::validate() const noexcept {
