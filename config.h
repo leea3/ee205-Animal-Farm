@@ -16,7 +16,7 @@
 #define NOERROR (0)
 #define MAX_NAME1 "12345678901234567890123456789012345678901234567890"
 #define ILLEGAL_NAME "123456789012345678901234567890123456789012345678901"
-#define PROGRAM_NAME "Animal Farm 2"
+#define PROGRAM_NAME "Animal Farm 3"
 
 /// Format the heading for dumping members of a class to the console
 ///

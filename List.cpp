@@ -34,6 +34,14 @@ bool List::isIn(Node *aNode) const {
 }
 
 bool List::isSorted() const noexcept {
+    if (head == nullptr || count <= 1)
+        return true;
+
+    for (Node *t=head; t->next != nullptr; t=t->next)
+        if ( *t > *t->next)
+            return false;
+
+    return true;
 }
 
 Node* List::get_first() const noexcept {
@@ -44,10 +52,6 @@ void List::deleteAllNodes() noexcept {
     //@todo add validation
     while( head != nullptr )
         pop_front();
-}
-
-bool List::validate() const noexcept {
-
 }
 
 Node* List::get_next(const Node *currentNode) {
