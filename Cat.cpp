@@ -17,6 +17,8 @@
 #include "Cat.h"
 #include "reportCats.h"
 
+static const std::string Cat::SPECIES_NAME = "Felis Catus";
+static const float       Cat::MAX_WEIGHT   = 40.0;
 
 /*
 #define FORMAT_LINE( className, member ) cout << setw(8) << (className) << setw(20) << (member) << setw(52)
